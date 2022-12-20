@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.Help.PrivacyPolicyView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:help="clr-namespace:NptExplorer.Mobile.ViewModels.Help;assembly=NptExplorer.Mobile"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    Title="Privacy Policy"
+    ios:Page.PrefersHomeIndicatorAutoHidden="True"
+    ios:Page.UseSafeArea="True"
+    x:TypeArguments="help:PrivacyPolicyViewModel">
+
+    <ContentPage.Content>
+        <StackLayout
+            Margin="20"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Label Style="{StaticResource HeaderLabelStyle}" Text="{extensions:Translate PrivacyPolicy_Title}" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{extensions:Translate PrivacyPolicy_Paragraph1a}" />
+                        <Span Text=" " />
+                        <Span
+                            FontAttributes="Bold"
+                            Text="our privacy policy"
+                            TextColor="{StaticResource PurpleColour}">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToPolicy}" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text=" " />
+                        <Span Text="{extensions:Translate PrivacyPolicy_Paragraph1b}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="{extensions:Translate PrivacyPolicy_Paragraph2}" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" Text="{extensions:Translate PrivacyPolicy_Paragraph3a}" />
+                        <Span Text=" " />
+                        <Span Text="{extensions:Translate PrivacyPolicy_Paragraph3b}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" Text="{extensions:Translate PrivacyPolicy_Paragraph4a}" />
+                        <Span Text=" " />
+                        <Span Text="{extensions:Translate PrivacyPolicy_Paragraph4b}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Style="{StaticResource HeaderLabelStyle}" Text="{extensions:Translate PrivacyPolicy_WithdrawHeader}" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{extensions:Translate PrivacyPolicy_Paragraph5a}" />
+                        <Span Text=" " />
+                        <Span
+                            FontAttributes="Bold"
+                            Text="helpdesk@blacklightsoftware.com"
+                            TextColor="{StaticResource PurpleColour}">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenEmailCommand}" CommandParameter="helpdesk@blacklightsoftware.com" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text=" " />
+                        <Span Text="{extensions:Translate PrivacyPolicy_Paragraph5b}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+
+    </ContentPage.Content>
+</views:PageBase>

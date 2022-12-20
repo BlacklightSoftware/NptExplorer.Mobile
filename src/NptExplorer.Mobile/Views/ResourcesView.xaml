@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.ResourcesView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:icons="clr-namespace:NptExplorer.Mobile.Constants;assembly=NptExplorer.Mobile"
+    xmlns:viewModels="clr-namespace:NptExplorer.Mobile.ViewModels;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    iOsSpecific:Page.PrefersHomeIndicatorAutoHidden="True"
+    iOsSpecific:Page.UseSafeArea="True"
+    x:TypeArguments="viewModels:ResourcesViewModel"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="True"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True">
+
+    <ContentPage.Resources>
+        <Style x:Key="resources-header" TargetType="FlexLayout">
+            <Setter Property="Direction" Value="Row" />
+            <Setter Property="JustifyContent" Value="SpaceBetween" />
+        </Style>
+        <Style x:Key="header-container" TargetType="FlexLayout">
+            <Setter Property="JustifyContent" Value="SpaceBetween" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Shell.TitleView>
+        <StackLayout
+            Margin="5,5,5,5"
+            HorizontalOptions="StartAndExpand"
+            Orientation="Horizontal"
+            VerticalOptions="Center">
+            <Label
+                x:Name="TitleLabel"
+                Style="{StaticResource TitleLabel}"
+                Text="{Binding ScreenTitle}" />
+            <Label Style="{StaticResource TitleIcon}" Text="{x:Static icons:IconConstants.Cog}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToSettings}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </Shell.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="{extensions:Translate Resources_ResourcesLabel}" />
+            <FlexLayout IsVisible="{Binding IsResourceVisible}">
+                <Button
+                    BackgroundColor="{Binding ResourceButtonColorGeneral}"
+                    Command="{Binding ExecuteGeneralVisible}"
+                    Text="{extensions:Translate Resources_GeneralLabel}" />
+                <Button
+                    BackgroundColor="{Binding ResourceButtonColorGetInvolved}"
+                    Command="{Binding ExecuteGetInvolved}"
+                    Text="{extensions:Translate Resources_GetInvolvedLabel}" />
+                <Button
+                    BackgroundColor="{Binding ResourceButtonColorLearnMore}"
+                    Command="{Binding ExecuteLearnMore}"
+                    Text="{extensions:Translate Resources_LearnMoreLabel}" />
+            </FlexLayout>
+            <ScrollView IsVisible="{Binding IsGeneralVisible}">
+                <StackLayout>
+                    <Label Text="Useful Info" />
+                    <Label Text="Visit NPT" />
+                    <Label Text="https://dramaticheart.wales" />
+                    <Label Text="Tempo Time Credit" />
+                    <Label Text="Tempo Time Credit" />
+                    <Label Text="Nearth Port Talbot Council" />
+                    <Label Text="https://npt.gov.uk" />
+                    <Label Text="Saftey" />
+                    <Label Text="www.walksafe.io" />
+                    <Label Text="Local Business" />
+                </StackLayout>
+            </ScrollView>
+            <ScrollView IsVisible="{Binding IsGetInvolvedVisible}">
+                <StackLayout>
+                    <Label Text="Volunteer" />
+                    <Label Text="NPT Volunteers" />
+                    <Label Text="14 Street, Nearth, SA1 3RF" />
+                    <Label Text="www.volunteersgroup.co.uk" />
+                    <Label Text="nptvolunteer@gmail.com" />
+                    <Label Text="Gnoll Volunteers" />
+                    <Label Text="14 Street, Nearth, SA1 3RF" />
+                    <Label Text="www.volunteersgroup.co.uk" />
+                    <Label Text="nptvolunteer@gmail.com" />
+                    <Label Text="Kids Group" />
+                    <Label Text="Nearth Brownies" />
+                    <Label Text="19 Road, Nearth, SA9 7AT" />
+                    <Label Text="www.browniesgroup.co.uk" />
+                    <Label Text="brownies@gmail.com" />
+                    <Label Text="Adult Group" />
+                    <Label Text="Ramblers" />
+                    <Label Text="www.ramblegroup.co.uk" />
+                </StackLayout>
+            </ScrollView>
+            <ScrollView IsVisible="{Binding IsLearnMoreVisible}">
+                <StackLayout>
+                    <Label Text="Nature and Wildlife Conservation" />
+                    <Label Text="NPT Education" />
+                    <Label Text="www.educationsite.co.uk" />
+                    <Label Text="Gnoll Volunteers" />
+                    <Label Text="General" />
+                    <Label Text="Information for Educators" />
+                    <Label Text="Ramblers" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</views:PageBase>

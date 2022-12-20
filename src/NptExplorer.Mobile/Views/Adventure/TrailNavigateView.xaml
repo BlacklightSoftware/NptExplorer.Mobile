@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.Adventure.TrailNavigateView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:adventure="clr-namespace:NptExplorer.Mobile.ViewModels.Adventure;assembly=NptExplorer.Mobile"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:icons="clr-namespace:NptExplorer.Mobile.Constants;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    iOsSpecific:Page.PrefersHomeIndicatorAutoHidden="True"
+    iOsSpecific:Page.UseSafeArea="True"
+    x:TypeArguments="adventure:TrailNavigateViewModel"
+    ControlTemplate="{StaticResource MainTemplate}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <Style x:Key="GeneralLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="1*,10*">
+            <StackLayout
+                Grid.Row="0"
+                Margin="20,5"
+                HorizontalOptions="Fill"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <Label
+                    HorizontalOptions="Start"
+                    IsVisible="True"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.ArrowLeft}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label
+                    x:Name="TitleLabel"
+                    HorizontalOptions="StartAndExpand"
+                    Style="{StaticResource TitleLabel}"
+                    Text="{Binding ScreenTitle}" />
+                <Label
+                    HorizontalOptions="End"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.Cog}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToSettings}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="1"
+                Margin="20,0"
+                VerticalOptions="Fill">
+                <Label Style="{StaticResource HeaderLabelStyle}" Text="{Binding Trail.TrailName}" />
+                <Label Style="{StaticResource GeneralLabel}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{extensions:Translate Miles_Label}" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Trail.DistanceMiles}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Style="{StaticResource GeneralLabel}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{extensions:Translate Time_Label}" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Trail.TimeHours}" />
+                            <Span Text=" " />
+                            <Span Text="{extensions:Translate General_Hours}" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Trail.TimeMinutes}" />
+                            <Span Text=" " />
+                            <Span Text="{extensions:Translate General_Minutes}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+
+                </Label>
+                <!--<StackLayout RadioButtonGroup.GroupName="{Binding MapType}">
+                <RadioButton ControlTemplate="{StaticResource MapRadioTemplate}" Value="satellite">
+                    <RadioButton.Content>
+                        <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label
+                                FontSize="Small"
+                                Text="{extensions:Translate TrailNavigate_SatelliteLabel}"
+                                TextColor="Black" />
+                        </StackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton ControlTemplate="{StaticResource MapRadioTemplate}" Value="terrain">
+                    <RadioButton.Content>
+                        <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label
+                                FontSize="Small"
+                                Text="{extensions:Translate TrailNavigate_TerrainLabel}"
+                                TextColor="Black" />
+                        </StackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+            </StackLayout>-->
+                <ContentView
+                    Margin="0,0,0,5"
+                    Content="{Binding TrailMap}"
+                    VerticalOptions="FillAndExpand" />
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</views:PageBase>

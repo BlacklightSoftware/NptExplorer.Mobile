@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="NptExplorer.Mobile.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:adventure="clr-namespace:NptExplorer.Mobile.Views.Adventure;assembly=NptExplorer.Mobile"
+    xmlns:explore="clr-namespace:NptExplorer.Mobile.Views.Explore;assembly=NptExplorer.Mobile"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:local="clr-namespace:NptExplorer.Mobile.Views"
+    xmlns:profile="clr-namespace:NptExplorer.Mobile.Views.Profile;assembly=NptExplorer.Mobile"
+    Title="NptExplorer.Mobile">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+        
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="White" />
+                <Setter Property="Shell.ForegroundColor" Value="Black" />
+                <Setter Property="Shell.TitleColor" Value="Black" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource MainColour}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarTitleColor" Value="White" />
+            </Style>
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="FlyoutItem" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <ShellItem Route="Landing">
+        <ShellContent ContentTemplate="{DataTemplate local:LandingView}" />
+    </ShellItem>
+    <TabBar>
+        <ShellContent
+            Title="{extensions:Translate Navigation_ExploreTabLabel}"
+            ContentTemplate="{DataTemplate explore:ExploreView}"
+            Icon="compass"
+            Route="explore" />
+        <ShellContent
+            Title="{extensions:Translate Navigation_AdventureTabLabel}"
+            ContentTemplate="{DataTemplate adventure:AdventureHomeView}"
+            Icon="mountain"
+            Route="adventureHome" />
+        <ShellContent
+            Title="{extensions:Translate Navigation_ProfileTabLabel}"
+            ContentTemplate="{DataTemplate profile:ProfileView}"
+            Icon="account"
+            Route="profile" />
+    </TabBar>
+
+</Shell>

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.Explore.ExploreMapView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:NptExplorer.Mobile.Controls;assembly=NptExplorer.Mobile"
+    xmlns:converters="clr-namespace:NptExplorer.Mobile.Converters;assembly=NptExplorer.Mobile"
+    xmlns:exploremap="clr-namespace:NptExplorer.Mobile.ViewModels.Explore;assembly=NptExplorer.Mobile"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:icons="clr-namespace:NptExplorer.Mobile.Constants;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views"
+    iOsSpecific:Page.PrefersHomeIndicatorAutoHidden="True"
+    iOsSpecific:Page.UseSafeArea="True"
+    x:TypeArguments="exploremap:ExploreMapViewModel"
+    ControlTemplate="{StaticResource MainTemplate}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True">
+
+    <ContentPage.Resources>
+        <converters:FacilityIconConvertor x:Key="FacilityIconConvertor" />
+        <Style x:Key="FacilityIcon" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontFamily" Value="IconFont" />
+            <Setter Property="TextColor" Value="{StaticResource WhiteColour}" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <ResourceDictionary />
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="1*,10*">
+        <StackLayout
+            Grid.Row="0"
+            Margin="20,5"
+            HorizontalOptions="Fill"
+            Orientation="Horizontal"
+            VerticalOptions="Center">
+            <Label
+                HorizontalOptions="Start"
+                IsVisible="True"
+                Style="{StaticResource TitleIcon}"
+                Text="{x:Static icons:IconConstants.ArrowLeft}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label
+                x:Name="TitleLabel"
+                HorizontalOptions="StartAndExpand"
+                Style="{StaticResource TitleLabel}"
+                Text="{Binding ScreenTitle}" />
+            <Label
+                HorizontalOptions="End"
+                Style="{StaticResource TitleIcon}"
+                Text="{x:Static icons:IconConstants.Cog}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToSettings}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Margin="20,0">
+            <Grid ColumnDefinitions="8*,2*" RowDefinitions="Auto">
+                <controls:ImageEntry
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="Fill"
+                    Image="search"
+                    ImageAlignment="Left"
+                    ImageHeight="10"
+                    ImageWidth="10"
+                    Placeholder="Enter location"
+                    Text="{Binding SearchValue}">
+                    <controls:ImageEntry.Behaviors>
+                        <extensions:EventToCommandBehavior Command="{Binding SearchCommand}" EventName="TextChanged" />
+                    </controls:ImageEntry.Behaviors>
+                </controls:ImageEntry>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Padding="0,0,0,0"
+                    FontFamily="IconFont"
+                    FontSize="30"
+                    HorizontalOptions="End"
+                    Text="{x:Static icons:IconConstants.Tune}"
+                    TextColor="{StaticResource BlackColour}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToFilter}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Padding="0,0,0,0"
+                    FontFamily="IconFont"
+                    FontSize="30"
+                    HorizontalOptions="End"
+                    Text="{x:Static icons:IconConstants.Map}"
+                    TextColor="{StaticResource RedColour}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToExploreHome}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <StackLayout>
+                <Label Style="{StaticResource HeaderLabelStyle}" Text="{extensions:Translate Location_Near_You_Label}" />
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding LocationCount}" />
+                            <Span Text=" " />
+                            <Span Text="{extensions:Translate Explore_LocationsLabel}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+            <ContentView
+                Margin="0,0,0,5"
+                Content="{Binding AdventureMap}"
+                IsVisible="{Binding ShowingMap}"
+                VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </Grid>
+</views:PageBase>

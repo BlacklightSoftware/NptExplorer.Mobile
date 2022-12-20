@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="NptExplorer.Mobile.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="WhiteColour">#FFFFFF</Color>
+            <Color x:Key="BlackColour">#000000</Color>
+            <Color x:Key="GreyColour">#333333</Color>
+            <Color x:Key="LightGreyColour">#ACB3BF</Color>
+            <Color x:Key="PurpleColour">#6750A4</Color>
+            <Color x:Key="MainColour">#006273</Color>
+            <Color x:Key="SecondaryColour">#01FF8F</Color>
+            <Color x:Key="TertiaryColour">#B8FFDB</Color>
+            <Color x:Key="RedColour">#B80007</Color>
+            <Color x:Key="FacebookBlueColour">#1877F2</Color>
+            <Color x:Key="WellbeingColour">#D13333</Color>
+            <Color x:Key="NatureColour">#7FB03D</Color>
+            <Color x:Key="HeritageColour">#7D561B</Color>
+            <Color x:Key="TrailColour">#1CADC0</Color>
+            <Color x:Key="PaleGreenColor">#CADCA6</Color>
+            <Color x:Key="BlueColor">#1DA1F2</Color>
+            <Color x:Key="PageFadeColor">#AA000000</Color>
+            <Color x:Key="LightBackgroundColor">#292828</Color>
+
+            <!--  Implicit Styles  -->
+            <Style ApplyToDerivedTypes="True" TargetType="Page">
+                <Setter Property="BackgroundColor" Value="{StaticResource WhiteColour}" />
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="Transparent" />
+                <Setter Property="BarTextColor" Value="{StaticResource WhiteColour}" />
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="{StaticResource WhiteColour}" />
+                <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style
+                x:Key="ValidationErrorLabelStyle"
+                ApplyToDerivedTypes="True"
+                TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource RedColour}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="HeaderLabelStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            </Style>
+            <Style x:Key="TitleLabel" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="TitleIcon" TargetType="Label">
+                <Setter Property="Padding" Value="0,0,0,0" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="IconFont" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Thickness x:Key="StandardLabelPadding">5,0,0,0</Thickness>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Views/Resources/Indicator.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

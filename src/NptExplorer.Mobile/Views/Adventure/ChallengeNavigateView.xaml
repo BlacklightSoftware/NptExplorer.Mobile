@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.Adventure.ChallengeNavigateView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:adventure="clr-namespace:NptExplorer.Mobile.ViewModels.Adventure;assembly=NptExplorer.Mobile"
+    xmlns:controls="clr-namespace:NptExplorer.Mobile.Controls;assembly=NptExplorer.Mobile"
+    xmlns:converters="clr-namespace:NptExplorer.Mobile.Converters;assembly=NptExplorer.Mobile"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:icons="clr-namespace:NptExplorer.Mobile.Constants;assembly=NptExplorer.Mobile"
+    xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    Title="Challenges"
+    iOsSpecific:Page.PrefersHomeIndicatorAutoHidden="True"
+    iOsSpecific:Page.UseSafeArea="True"
+    x:TypeArguments="adventure:ChallengeNavigateViewModel"
+    ControlTemplate="{StaticResource MainTemplate}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <extensions:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        <converters:ImageToUriConverter x:Key="ImageToUriConverter" />
+        <Style x:Key="LogButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource PaleGreenColor}" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+        <Style x:Key="LinkLabel" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource PurpleColour}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="End" />
+            <Setter Property="VerticalOptions" Value="End" />
+        </Style>
+        <Style x:Key="GeneralLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="CheckInButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource TertiaryColour}" />
+            <Setter Property="BorderColor" Value="{StaticResource MainColour}" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="CornerRadius" Value="5" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="1*,10*">
+            <StackLayout
+                Grid.Row="0"
+                Margin="20,5"
+                HorizontalOptions="Fill"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <Label
+                    HorizontalOptions="Start"
+                    IsVisible="True"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.ArrowLeft}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label
+                    x:Name="TitleLabel"
+                    Style="{StaticResource TitleLabel}"
+                    Text="{Binding ScreenTitle}" />
+                <Label Style="{StaticResource TitleIcon}" Text="{x:Static icons:IconConstants.Cog}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToSettings}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout
+                Grid.Row="1"
+                Margin="20,0"
+                VerticalOptions="Fill">
+                <Label Style="{StaticResource HeaderLabelStyle}" Text="{extensions:Translate ChallengeDetails_AdventureHeader}" />
+                <Label Style="{StaticResource GeneralLabel}" Text="{Binding SelectedPoi.Label}" />
+                <Grid
+                    ColumnDefinitions="6*,3*,2*"
+                    IsVisible="False"
+                    RowDefinitions="Auto">
+                    <Button
+                        Grid.Column="0"
+                        IsVisible="False"
+                        Style="{StaticResource CheckInButton}"
+                        Text="{extensions:Translate Challenge_CheckIn}">
+                        <Button.ImageSource>
+                            <FontImageSource
+                                FontFamily="IconFont"
+                                Glyph="{x:Static icons:IconConstants.Check}"
+                                Size="20"
+                                Color="Black" />
+                        </Button.ImageSource>
+                    </Button>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Padding="0"
+                        IsVisible="False"
+                        Style="{StaticResource TitleIcon}"
+                        Text="{x:Static icons:IconConstants.Tune}"
+                        TextColor="{StaticResource BlackColour}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoToFilter}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Label Style="{StaticResource GeneralLabel}" Text="{Binding DistanceToPoi}" />
+                <ContentView
+                    Margin="0,0,0,5"
+                    Content="{Binding PoiMap}"
+                    VerticalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <pancakeView:PancakeView
+                x:Name="MyDraggableView"
+                Grid.Row="1"
+                BackgroundColor="White"
+                CornerRadius="60,60,0,0"
+                HeightRequest="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="End">
+                <pancakeView:PancakeView.Border>
+                    <pancakeView:Border Thickness="1" Color="Gray" />
+                </pancakeView:PancakeView.Border>
+                <Grid RowDefinitions="3*,Auto">
+                    <ScrollView Grid.Row="0" HeightRequest="200">
+                        <StackLayout Padding="20,20,20,0">
+                            <Label
+                                Margin="0,0,15,0"
+                                Style="{StaticResource LinkLabel}"
+                                Text="{extensions:Translate General_Close}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CloseDrawerCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                Margin="15,0,0,0"
+                                Style="{StaticResource HeaderLabelStyle}"
+                                Text="{Binding SelectedPoi.Label}" />
+                            <Label
+                                Margin="15,0,0,0"
+                                Style="{StaticResource GeneralLabel}"
+                                Text="{Binding SelectedPoi.Description}" />
+                            <forms:CachedImage
+                                Aspect="AspectFill"
+                                DownsampleToViewSize="true"
+                                HeightRequest="150"
+                                HorizontalOptions="Center"
+                                Source="{Binding SelectedPoi.Image, Converter={StaticResource ImageToUriConverter}}"
+                                WidthRequest="320" />
+                            <controls:BadgeControl
+                                Margin="0,0,10,0"
+                                BadgeType="{Binding SelectedPoi.BadgeTypeId}"
+                                Collected="{Binding SelectedPoi.Collected}"
+                                HorizontalOptions="End" />
+                        </StackLayout>
+                    </ScrollView>
+                    <StackLayout
+                        Grid.Row="1"
+                        Margin="10"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                        <Button
+                            Command="{Binding CheckInCommand}"
+                            IsVisible="{Binding SelectedPoi.Collected, Converter={StaticResource InvertedBoolConverter}}"
+                            Style="{StaticResource CheckInButton}"
+                            Text="{extensions:Translate Challenge_CheckIn}">
+                            <Button.ImageSource>
+                                <FontImageSource
+                                    FontFamily="IconFont"
+                                    Glyph="{x:Static icons:IconConstants.Check}"
+                                    Size="20"
+                                    Color="Black" />
+                            </Button.ImageSource>
+                        </Button>
+                        <Button
+                            Command="{Binding LogCommand}"
+                            IsVisible="{Binding SelectedPoi.Collected, Converter={StaticResource InvertedBoolConverter}}"
+                            Style="{StaticResource LogButton}"
+                            Text="{extensions:Translate General_Log}" />
+                    </StackLayout>
+                </Grid>
+            </pancakeView:PancakeView>
+        </Grid>
+    </ContentPage.Content>
+</views:PageBase>

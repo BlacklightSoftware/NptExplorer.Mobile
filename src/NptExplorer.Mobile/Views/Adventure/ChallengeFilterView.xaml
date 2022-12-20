@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.Adventure.ChallengeFilterView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:adventure="clr-namespace:NptExplorer.Mobile.ViewModels.Adventure;assembly=NptExplorer.Mobile"
+    xmlns:controls="clr-namespace:NptExplorer.Mobile.Controls;assembly=NptExplorer.Mobile"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    ios:Page.PrefersHomeIndicatorAutoHidden="True"
+    ios:Page.UseSafeArea="True"
+    x:TypeArguments="adventure:ChallengeFilterViewModel"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="True"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <Style x:Key="LinkLabel" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource PurpleColour}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="0,0,10,0" />
+        </Style>
+        <Style x:Key="PanelHeader" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+        </Style>
+        <Style x:Key="ChipStyleSelected" TargetType="controls:Chip">
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColour}" />
+            <Setter Property="BorderColor" Value="{StaticResource MainColour}" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="CornerRadius" Value="5" />
+        </Style>
+        <Style x:Key="ChipStyleUnselected" TargetType="controls:Chip">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="BorderColor" Value="{StaticResource LightGreyColour}" />
+            <Setter Property="TextColor" Value="{StaticResource LightGreyColour}" />
+            <Setter Property="CornerRadius" Value="5" />
+        </Style>
+        <Style x:Key="CheckBoxFrame" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="BorderColor" Value="{StaticResource LightGreyColour}" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Shell.TitleView>
+        <StackLayout
+            Margin="0,5,5,5"
+            HorizontalOptions="StartAndExpand"
+            Orientation="Horizontal"
+            VerticalOptions="Center">
+            <Label Style="{StaticResource TitleLabel}" Text="{extensions:Translate Global_FiltersLabel}" />
+            <Label
+                Style="{StaticResource LinkLabel}"
+                Text="{extensions:Translate Filter_ClearLabel}"
+                VerticalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ClearFilters}" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                Style="{StaticResource LinkLabel}"
+                Text="{extensions:Translate Filter_SaveLabel}"
+                VerticalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SaveFilters}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </Shell.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <StackLayout x:Name="BadgePanel">
+                <Label Style="{StaticResource PanelHeader}" Text="{extensions:Translate Filters_BadgeTypeLabel}" />
+                <Frame Style="{StaticResource CheckBoxFrame}">
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox x:Name="CompleteCheckBox" IsChecked="{Binding Completed}" />
+                        <Label Text="{extensions:Translate Filter_ShowCompleted}" TextColor="{StaticResource LightGreyColour}">
+                            <Label.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding Source={x:Reference CompleteCheckBox}, Path=IsChecked}"
+                                    TargetType="Label"
+                                    Value="true">
+                                    <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                    </StackLayout>
+                    <Frame.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference CompleteCheckBox}, Path=IsChecked}"
+                            TargetType="Frame"
+                            Value="true">
+                            <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColour}" />
+                            <Setter Property="BorderColor" Value="{StaticResource MainColour}" />
+                        </DataTrigger>
+                    </Frame.Triggers>
+                </Frame>
+                <FlexLayout
+                    BindableLayout.ItemsSource="{Binding Badges}"
+                    JustifyContent="SpaceAround"
+                    Wrap="Wrap">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Margin="0,5">
+                                <controls:Chip
+                                    Padding="8,5"
+                                    AutoToggle="True"
+                                    ClickedCommand="{Binding ToggleSelected}"
+                                    IsSelected="{Binding Selected}"
+                                    IsToggleable="True"
+                                    Text="{Binding Title}">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Style" Value="{StaticResource ChipStyleSelected}" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Style" Value="{StaticResource ChipStyleUnselected}" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </controls:Chip>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</views:PageBase>

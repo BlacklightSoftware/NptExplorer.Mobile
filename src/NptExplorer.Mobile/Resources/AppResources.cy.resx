@@ -1,0 +1,1207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_Text1" xml:space="preserve">
+    <value>Cronfeydd </value>
+  </data>
+  <data name="About_Text10" xml:space="preserve">
+    <value>Adfywio Cymunedol y DU</value>
+  </data>
+  <data name="About_Text11" xml:space="preserve">
+    <value>. Dyluniwyd y cymhwysiad ar gyfer pob oedran yng nghymuned Castell-nedd Port Talbot a’i nod yw cysylltu pobl â’u mannau gwyrdd a rhoi cyfle iddynt ddysgu mwy am natur, treftadaeth a mannau gwyrdd.</value>
+  </data>
+  <data name="About_Text2" xml:space="preserve">
+    <value>Datblygwyd ap Anturiwr CNPT: Ehangwch Eich Antur</value>
+  </data>
+  <data name="About_Text3" xml:space="preserve">
+    <value> fel rhan o </value>
+  </data>
+  <data name="About_Text4" xml:space="preserve">
+    <value>Brosiect Map Ffordd Seilwaith Gwyrdd CNPT</value>
+  </data>
+  <data name="About_Text5" xml:space="preserve">
+    <value> ym </value>
+  </data>
+  <data name="About_Text6" xml:space="preserve">
+    <value>Mhrifysgol Abertawe</value>
+  </data>
+  <data name="About_Text7" xml:space="preserve">
+    <value> mewn partneriaeth â Chyngor Castell-nedd Port Talbot ac mae wedi’i ariannu gan </value>
+  </data>
+  <data name="About_Text8" xml:space="preserve">
+    <value>Lywodraeth y DU</value>
+  </data>
+  <data name="About_Text9" xml:space="preserve">
+    <value> drwy’r </value>
+  </data>
+  <data name="Activities_Label" xml:space="preserve">
+    <value>Gweithgareddau</value>
+  </data>
+  <data name="Address_Label" xml:space="preserve">
+    <value>Cyfeiriad</value>
+  </data>
+  <data name="AdventureTrails_StartPointLabel" xml:space="preserve">
+    <value>Man Cychwyn:</value>
+  </data>
+  <data name="Adventure_ChallengesDescription" xml:space="preserve">
+    <value>Casglwch fathodynnau Antur i ddod yn anturiwr o fri</value>
+  </data>
+  <data name="Adventure_ChallengesLabel" xml:space="preserve">
+    <value>Heriau Antur</value>
+  </data>
+  <data name="Adventure_NoChallengesLabel" xml:space="preserve">
+    <value>Dim heriau i'w gweld</value>
+  </data>
+  <data name="Adventure_NoTrailsLabel" xml:space="preserve">
+    <value>Dim llwybrau i'w gweld</value>
+  </data>
+  <data name="Adventure_SearchLabel" xml:space="preserve">
+    <value>Ble hoffech chi fynd?</value>
+  </data>
+  <data name="Adventure_TrailsDescription" xml:space="preserve">
+    <value>Dewiswch y llwybr sy'n addas i chi</value>
+  </data>
+  <data name="Adventure_TrailsLabel" xml:space="preserve">
+    <value>Llwybrau Antur</value>
+  </data>
+  <data name="Allow_Followers_Label" xml:space="preserve">
+    <value>Caniatáu Dilynwyr</value>
+  </data>
+  <data name="BadgePopUp_CloseButton" xml:space="preserve">
+    <value>Cau</value>
+  </data>
+  <data name="BadgePopUp_HeaderLabel" xml:space="preserve">
+    <value>Da iawn!</value>
+  </data>
+  <data name="BadgePopUp_HeritageLabel" xml:space="preserve">
+    <value>Rydych wedi ennill bathodyn Treftadaeth</value>
+  </data>
+  <data name="BadgePopUp_NatureLabel" xml:space="preserve">
+    <value>Rydych wedi ennill bathodyn Natur</value>
+  </data>
+  <data name="BadgePopUp_ShareButton" xml:space="preserve">
+    <value>Rhannu</value>
+  </data>
+  <data name="BadgePopUp_TrailLabel" xml:space="preserve">
+    <value>Rydych wedi ennill bathodyn Llwybr</value>
+  </data>
+  <data name="BadgePopUp_WellbeingLabel" xml:space="preserve">
+    <value>Rydych wedi ennill bathodyn Llesiant</value>
+  </data>
+  <data name="Badge_CloseLabel" xml:space="preserve">
+    <value>Cau</value>
+  </data>
+  <data name="Badge_HeritageLabel" xml:space="preserve">
+    <value>Rydych wedi ennill bathodyn Treftadaeth</value>
+  </data>
+  <data name="Badge_NatureLabel" xml:space="preserve">
+    <value>Rydych wedi ennill bathodyn Natur</value>
+  </data>
+  <data name="Badge_ShareLabel" xml:space="preserve">
+    <value>Rhannu</value>
+  </data>
+  <data name="Badge_TrailLabel" xml:space="preserve">
+    <value>Rydych wedi ennill bathodyn Llwybr</value>
+  </data>
+  <data name="Badge_WellbeingLabel" xml:space="preserve">
+    <value>Rydych wedi ennill bathodyn Llesiant</value>
+  </data>
+  <data name="Badge_WellDoneLabel" xml:space="preserve">
+    <value>Da iawn!</value>
+  </data>
+  <data name="Based_Location_Label" xml:space="preserve">
+    <value>Yn seiliedig ar eich lleoliad ar hyn o bryd (0-10 milltir)</value>
+  </data>
+  <data name="Bus_Routes_Label" xml:space="preserve">
+    <value>Llwybrau Bysiau</value>
+  </data>
+  <data name="Card_Title_Label" xml:space="preserve">
+    <value>Parc y Gnoll</value>
+  </data>
+  <data name="ChallengeDetails_AdventureHeader" xml:space="preserve">
+    <value>Antur</value>
+  </data>
+  <data name="Challenges_AdventureChallengesDescription" xml:space="preserve">
+    <value>Casglwch fathodynnau Antur i ddod yn Anturiwr o fri!</value>
+  </data>
+  <data name="Challenges_AdventureChallengesHeader" xml:space="preserve">
+    <value>Heriau Antur</value>
+  </data>
+  <data name="Challenges_BadgesLabel" xml:space="preserve">
+    <value>Bathodynnau</value>
+  </data>
+  <data name="Challenges_ChallengesLabel" xml:space="preserve">
+    <value>Heriau</value>
+  </data>
+  <data name="Challenges_GoButton" xml:space="preserve">
+    <value>Mynd</value>
+  </data>
+  <data name="Challenge_BadgeErrorDescription" xml:space="preserve">
+    <value>We're sorry, there has been a problem logging your badge. Please try again later.</value>
+  </data>
+  <data name="Challenge_BadgeErrorTitle" xml:space="preserve">
+    <value>Unable to log badge</value>
+  </data>
+  <data name="Challenge_CheckIn" xml:space="preserve">
+    <value>Cadarnhau lleoliad</value>
+  </data>
+  <data name="Challenge_CheckInButton" xml:space="preserve">
+    <value>Iawn</value>
+  </data>
+  <data name="Challenge_CheckInDetail" xml:space="preserve">
+    <value>Cadarnhewch eich lleoliad</value>
+  </data>
+  <data name="Challenge_CheckInSuccessButton" xml:space="preserve">
+    <value>Iawn</value>
+  </data>
+  <data name="Challenge_CheckInSuccessDetail" xml:space="preserve">
+    <value>Wedi cadarnhau lleoliad</value>
+  </data>
+  <data name="Challenge_CheckInSuccessTitle" xml:space="preserve">
+    <value>Cadarnhau Lleoliad</value>
+  </data>
+  <data name="Challenge_CheckInTitle" xml:space="preserve">
+    <value>Cadarnhau Lleoliad</value>
+  </data>
+  <data name="Challenge_NoChallenges" xml:space="preserve">
+    <value>Dim heriau i'w gweld</value>
+  </data>
+  <data name="Confirm_Reset_Password_Placeholder_Label" xml:space="preserve">
+    <value>Teipiwch eich cyfrinair eto</value>
+  </data>
+  <data name="DeleteAccountConfirmation" xml:space="preserve">
+    <value>Mae eich cyfrif wedi ei ddileu erbyn hyn</value>
+  </data>
+  <data name="DeleteAccountError" xml:space="preserve">
+    <value>Ymddiheurwn, cafwyd problem wrth geisio dileu eich cyfrif. Rhowch gynnig arni eto. Os bydd y broblem yn parhau, cysylltwch â ni yn roadmapgi@gmail.com</value>
+  </data>
+  <data name="DeleteAccount_Description" xml:space="preserve">
+    <value>Sylwch, wrth ddileu eich cyfrif fe gollir yr holl ddata sy’n gysylltiedig â’ch cynnydd ar yr Ap NPT Explorer hefyd. A ydych yn siŵr eich bod yn dymuno parhau?</value>
+  </data>
+  <data name="DeleteAccount_Title" xml:space="preserve">
+    <value>Dileu fy Nghyfrif</value>
+  </data>
+  <data name="DetailsButton" xml:space="preserve">
+    <value>MANYLION</value>
+  </data>
+  <data name="Difficulty_Easy" xml:space="preserve">
+    <value>Hawdd</value>
+  </data>
+  <data name="Difficulty_SomeExertion" xml:space="preserve">
+    <value>Rhywfaint o waith caled</value>
+  </data>
+  <data name="Difficulty_Strenuous" xml:space="preserve">
+    <value>Anodd</value>
+  </data>
+  <data name="Difficulty_Unknown" xml:space="preserve">
+    <value>Anhysbys</value>
+  </data>
+  <data name="Distance_Label" xml:space="preserve">
+    <value>Pellter</value>
+  </data>
+  <data name="Distance_Miles_RadioButton" xml:space="preserve">
+    <value>Pellter (milltiroedd)</value>
+  </data>
+  <data name="Distance_Time_RadioButton" xml:space="preserve">
+    <value>Pellter (amser gyrru)</value>
+  </data>
+  <data name="Distance_Walking_RadioButton" xml:space="preserve">
+    <value>Pellter (amser cerdded)</value>
+  </data>
+  <data name="Enum_ActivitiesCycling" xml:space="preserve">
+    <value>Beicio</value>
+  </data>
+  <data name="Enum_ActivitiesHiking" xml:space="preserve">
+    <value>Heicio</value>
+  </data>
+  <data name="Enum_ActivitiesLakes" xml:space="preserve">
+    <value>Llynnoedd</value>
+  </data>
+  <data name="Enum_ActivitiesVolunteer" xml:space="preserve">
+    <value>Gwirfoddolwr</value>
+  </data>
+  <data name="Enum_ActivitiesWaterfalls" xml:space="preserve">
+    <value>Rhaeadrau</value>
+  </data>
+  <data name="Enum_ActivitiesWildlife" xml:space="preserve">
+    <value>Gwylio Bywyd Gwyllt</value>
+  </data>
+  <data name="Enum_BadgeHeritage" xml:space="preserve">
+    <value>Treftadaeth</value>
+  </data>
+  <data name="Enum_BadgeNature" xml:space="preserve">
+    <value>Natur</value>
+  </data>
+  <data name="Enum_BadgeTrail" xml:space="preserve">
+    <value>Llwybr</value>
+  </data>
+  <data name="Enum_BadgeWellbeing" xml:space="preserve">
+    <value>Llesiant</value>
+  </data>
+  <data name="Enum_DifficultyEasy" xml:space="preserve">
+    <value>Hawdd</value>
+  </data>
+  <data name="Enum_DifficultySomeExertion" xml:space="preserve">
+    <value>Rhywfaint o waith caled</value>
+  </data>
+  <data name="Enum_DifficultyStrenuous" xml:space="preserve">
+    <value>Anodd</value>
+  </data>
+  <data name="Enum_FacilityCafe" xml:space="preserve">
+    <value>Caffi/Bwytai</value>
+  </data>
+  <data name="Enum_FacilityDogFriendly" xml:space="preserve">
+    <value>Addas i Gŵn</value>
+  </data>
+  <data name="Enum_FacilityParking" xml:space="preserve">
+    <value>Parcio</value>
+  </data>
+  <data name="Enum_FacilityPlayground" xml:space="preserve">
+    <value>Maes Chwarae</value>
+  </data>
+  <data name="Enum_FacilityToilets" xml:space="preserve">
+    <value>Toiledau</value>
+  </data>
+  <data name="Enum_FacilityWheelchair" xml:space="preserve">
+    <value>Hygyrch i Gadeiriau Olwyn</value>
+  </data>
+  <data name="Enum_HabitatBrownfield" xml:space="preserve">
+    <value>Tir Llwyd</value>
+  </data>
+  <data name="Enum_HabitatCanalside" xml:space="preserve">
+    <value>Ar Hyd Camlas</value>
+  </data>
+  <data name="Enum_HabitatCoastal" xml:space="preserve">
+    <value>Arfordirol/Twyni Tywod/Traeth</value>
+  </data>
+  <data name="Enum_HabitatFen" xml:space="preserve">
+    <value>Cors</value>
+  </data>
+  <data name="Enum_HabitatGrassland" xml:space="preserve">
+    <value>Glaswelltir/Dôl</value>
+  </data>
+  <data name="Enum_HabitatMoorland" xml:space="preserve">
+    <value>Rhostir</value>
+  </data>
+  <data name="Enum_HabitatPasture" xml:space="preserve">
+    <value>Porfa/Ffordd Wledig</value>
+  </data>
+  <data name="Enum_HabitatPond" xml:space="preserve">
+    <value>Pwll Dŵr</value>
+  </data>
+  <data name="Enum_HabitatRiverside" xml:space="preserve">
+    <value>Glan Afon</value>
+  </data>
+  <data name="Enum_HabitatRockface" xml:space="preserve">
+    <value>Clogwyn</value>
+  </data>
+  <data name="Enum_HabitatUrban" xml:space="preserve">
+    <value>Trefol</value>
+  </data>
+  <data name="Enum_HabitatWaterfall" xml:space="preserve">
+    <value>Rhaeadr</value>
+  </data>
+  <data name="Enum_HabitatWetland" xml:space="preserve">
+    <value>Gwlypdir</value>
+  </data>
+  <data name="Enum_HabitatWoodland" xml:space="preserve">
+    <value>Coetir/Planhigfa</value>
+  </data>
+  <data name="Enum_TrailTimesFourToSix" xml:space="preserve">
+    <value>4-6 Awr</value>
+  </data>
+  <data name="Enum_TrailTimesSixToEight" xml:space="preserve">
+    <value>6-8 Awr</value>
+  </data>
+  <data name="Enum_TrailTimesTwoToFour" xml:space="preserve">
+    <value>2-4 Awr</value>
+  </data>
+  <data name="Enum_TrailTimeZeroToTwo" xml:space="preserve">
+    <value>0-2 Awr</value>
+  </data>
+  <data name="Error_ErrorTitle" xml:space="preserve">
+    <value>Gwall</value>
+  </data>
+  <data name="Error_LoadingLabel" xml:space="preserve">
+    <value>Problem llwytho</value>
+  </data>
+  <data name="Error_LocationServicesButton" xml:space="preserve">
+    <value>Iawn</value>
+  </data>
+  <data name="Error_LocationServicesDetail" xml:space="preserve">
+    <value>Caniatáu gwasanaethau lleoli er mwyn llywio</value>
+  </data>
+  <data name="Error_LocationServicesTitle" xml:space="preserve">
+    <value>Llywio</value>
+  </data>
+  <data name="Error_MapDetail" xml:space="preserve">
+    <value>Mae'n ddrwg gennym, mae problem wedi bod gyda'r map hwn</value>
+  </data>
+  <data name="Error_MapOkButton" xml:space="preserve">
+    <value>Iawn</value>
+  </data>
+  <data name="Error_MapTitle" xml:space="preserve">
+    <value>Ymddiheuriadau!</value>
+  </data>
+  <data name="Error_OkButton" xml:space="preserve">
+    <value>Iawn</value>
+  </data>
+  <data name="Explore_DescriptionLabel" xml:space="preserve">
+    <value>Disgrifiad</value>
+  </data>
+  <data name="Explore_HighlightsLabel" xml:space="preserve">
+    <value>Uchafbwyntiau</value>
+  </data>
+  <data name="Explore_HowToGetThereLabel" xml:space="preserve">
+    <value>Sut i gyrraedd yno</value>
+  </data>
+  <data name="Explore_LocationsLabel" xml:space="preserve">
+    <value>Lleoliadau</value>
+  </data>
+  <data name="Explore_NearestBusStopLabel" xml:space="preserve">
+    <value>Safle Bws Agosaf</value>
+  </data>
+  <data name="Explore_SharedLocation" xml:space="preserve">
+    <value>Lleoliad wedi’i Rannu</value>
+  </data>
+  <data name="Explore_What3Wordslabel" xml:space="preserve">
+    <value>What3Words</value>
+  </data>
+  <data name="Facilities_Label" xml:space="preserve">
+    <value>Cyfleusterau</value>
+  </data>
+  <data name="Filters_BadgeTypeLabel" xml:space="preserve">
+    <value>Math o Fathodyn</value>
+  </data>
+  <data name="Filters_BadgeTypeSub" xml:space="preserve">
+    <value>Yn seiliedig ar eich lleoliad ar hyn o bryd (0-10 milltir)</value>
+  </data>
+  <data name="Filters_DistanceDriving" xml:space="preserve">
+    <value>Pellter (amser gyrru)</value>
+  </data>
+  <data name="Filters_DistanceMiles" xml:space="preserve">
+    <value>Pellter (milltiroedd)</value>
+  </data>
+  <data name="Filters_DistanceWalking" xml:space="preserve">
+    <value>Pellter (amser cerdded)</value>
+  </data>
+  <data name="Filters_HabitatLabel" xml:space="preserve">
+    <value>Cynefin</value>
+  </data>
+  <data name="Filters_TrailsDifficultyLabel" xml:space="preserve">
+    <value>Llwybrau/Anhawster</value>
+  </data>
+  <data name="Filters_TrailsDistanceLabel" xml:space="preserve">
+    <value>Llwybrau/Pellter</value>
+  </data>
+  <data name="Filters_TrailsTimeLabel" xml:space="preserve">
+    <value>Llwybrau/Amser</value>
+  </data>
+  <data name="Filter_ClearLabel" xml:space="preserve">
+    <value>Clirio</value>
+  </data>
+  <data name="Filter_Label" xml:space="preserve">
+    <value>Hidlo</value>
+  </data>
+  <data name="Filter_SaveLabel" xml:space="preserve">
+    <value>Cadw</value>
+  </data>
+  <data name="Filter_ShowCompleted" xml:space="preserve">
+    <value>Show completed</value>
+  </data>
+  <data name="ForgotPassword_CancelButton" xml:space="preserve">
+    <value>Canslo</value>
+  </data>
+  <data name="ForgotPassword_EmailDescription" xml:space="preserve">
+    <value>Rhowch gyfeiriad e-bost eich cyfrif Byddwn yn anfon neges e-bost atoch i ailosod eich cyfrinair</value>
+  </data>
+  <data name="ForgotPassword_EmailPlaceholder" xml:space="preserve">
+    <value>Rhowch eich cyfeiriad e-bost</value>
+  </data>
+  <data name="ForgotPassword_SendButton" xml:space="preserve">
+    <value>Anfon e-bost</value>
+  </data>
+  <data name="ForgotPassword_Title" xml:space="preserve">
+    <value>Wedi Anghofio Cyfrinair</value>
+  </data>
+  <data name="General_And" xml:space="preserve">
+    <value> a </value>
+  </data>
+  <data name="General_Close" xml:space="preserve">
+    <value>Cau</value>
+  </data>
+  <data name="General_EnterLocation" xml:space="preserve">
+    <value>Rhowch y lleoliad</value>
+  </data>
+  <data name="General_Hours" xml:space="preserve">
+    <value>awr</value>
+  </data>
+  <data name="General_Log" xml:space="preserve">
+    <value>Cofnod</value>
+  </data>
+  <data name="General_Minutes" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="General_Navigate" xml:space="preserve">
+    <value>Llywio</value>
+  </data>
+  <data name="General_No" xml:space="preserve">
+    <value>Na</value>
+  </data>
+  <data name="General_Or" xml:space="preserve">
+    <value>neu</value>
+  </data>
+  <data name="General_Yes" xml:space="preserve">
+    <value>Ie</value>
+  </data>
+  <data name="Global_FiltersLabel" xml:space="preserve">
+    <value>Hidlyddion</value>
+  </data>
+  <data name="Global_FundingLabel" xml:space="preserve">
+    <value>Ariennir yr ap hwn gan Lywodraeth y DU drwy Gronfa Adfywio Cymunedol y DU.</value>
+  </data>
+  <data name="Global_Greeting" xml:space="preserve">
+    <value>Helô, </value>
+  </data>
+  <data name="Global_Searching" xml:space="preserve">
+    <value>Chwilio...</value>
+  </data>
+  <data name="Guest_BackButton" xml:space="preserve">
+    <value>Yn ôl</value>
+  </data>
+  <data name="Guest_CreateButton" xml:space="preserve">
+    <value>Creu Cyfrif</value>
+  </data>
+  <data name="Guest_Label" xml:space="preserve">
+    <value>Gwestai</value>
+  </data>
+  <data name="Guest_Title" xml:space="preserve">
+    <value>Creu enw defnyddiwr</value>
+  </data>
+  <data name="Guest_UsernameDescription" xml:space="preserve">
+    <value>Cewch ddefnyddio llythrennau a rhif i greu enw defnyddiwr. Dim nodau arbennig na chyfeiriadau e-bost</value>
+  </data>
+  <data name="Guest_UsernamePlaceholder" xml:space="preserve">
+    <value>Rhowch eich enw defnyddiwr</value>
+  </data>
+  <data name="Kilometers_Label" xml:space="preserve">
+    <value>Cilometrau</value>
+  </data>
+  <data name="Landing_TapToStart" xml:space="preserve">
+    <value>Tapiwch y botwm i ddechrau</value>
+  </data>
+  <data name="Language_Label" xml:space="preserve">
+    <value>Iaith</value>
+  </data>
+  <data name="LocationServiceIosPermissionDetails" xml:space="preserve">
+    <value>Mae angen i’r ap hwn gael mynediad at eich lleoliad er mwyn darparu'r swyddogaeth y gofynnwyd amdani. Bydd angen i chi ganiatáu hyn yn eich gosodiadau.</value>
+  </data>
+  <data name="LocationServiceIosPermissionTitle" xml:space="preserve">
+    <value>Gwasanaethau Lleoliad</value>
+  </data>
+  <data name="LocationServicePermissionDetails" xml:space="preserve">
+    <value>Mae angen i’r ap hwn gael mynediad at eich lleoliad er mwyn darparu'r swyddogaeth y gofynnwyd amdani</value>
+  </data>
+  <data name="LocationServicePermissionTitle" xml:space="preserve">
+    <value>Gwasanaethau Lleoliad</value>
+  </data>
+  <data name="Location_Near_You_Label" xml:space="preserve">
+    <value>Lleoliadau yn eich cyffiniau</value>
+  </data>
+  <data name="Login_CreateAccountButton" xml:space="preserve">
+    <value>Cofrestru cyfrif</value>
+  </data>
+  <data name="Login_ExistingAccountButton" xml:space="preserve">
+    <value>Oes gennych chi gyfrif eisoes? Mewngofnodi</value>
+  </data>
+  <data name="Login_FacebookButton" xml:space="preserve">
+    <value>Parhau gyda Facebook</value>
+  </data>
+  <data name="Login_GoogleButton" xml:space="preserve">
+    <value>Parhau gyda Google</value>
+  </data>
+  <data name="Login_TermsAndConditions" xml:space="preserve">
+    <value>Drwy barhau, rydych yn cytuno i dderbyn Telerau'r Gwasanaeth a'r Polisi Preifatrwydd.</value>
+  </data>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Mewngofnodi</value>
+  </data>
+  <data name="Login_TwitterButton" xml:space="preserve">
+    <value>Parhau gyda Twitter</value>
+  </data>
+  <data name="Log_Out_Label" xml:space="preserve">
+    <value>Allgofnodi</value>
+  </data>
+  <data name="Miles_Label" xml:space="preserve">
+    <value>Milltiroedd</value>
+  </data>
+  <data name="Navigation_AdventureTabLabel" xml:space="preserve">
+    <value>Antur</value>
+  </data>
+  <data name="Navigation_ExploreTabLabel" xml:space="preserve">
+    <value>Anturio</value>
+  </data>
+  <data name="Navigation_ProfileTabLabel" xml:space="preserve">
+    <value>Proffil</value>
+  </data>
+  <data name="Navigation_ResourcesTabLabel" xml:space="preserve">
+    <value>Adnoddau</value>
+  </data>
+  <data name="No_Option" xml:space="preserve">
+    <value>Na</value>
+  </data>
+  <data name="Poi_BadgeCollectedLabel" xml:space="preserve">
+    <value>Wedi casglu 1 bathodyn</value>
+  </data>
+  <data name="Poi_DidYouSeeQuestion" xml:space="preserve">
+    <value>Did you see</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph1a" xml:space="preserve">
+    <value>Under data protection laws, we are required to provide you with certain information about who we are, how we process your personal data and for what purposes, and your rights in relation to your personal data. This information is provided in</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph1b" xml:space="preserve">
+    <value>and it is important that you read that information.</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph2" xml:space="preserve">
+    <value>Before using this App, please indicate your consent to our processing of your personal data (including your name, contact details, device information, and cookies) as described in the policy.</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph3a" xml:space="preserve">
+    <value>YES</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph3b" xml:space="preserve">
+    <value>I consent to the Privacy Policy.</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph4a" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph4b" xml:space="preserve">
+    <value>I do not consent to the Privacy Policy.</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph5a" xml:space="preserve">
+    <value>Once you provide consent by selecting "YES", you may change your mind and withdraw consent at any time by contacting us at</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph5b" xml:space="preserve">
+    <value>but that will not affect the lawfulness of any processing carried out before you withdraw your consent.</value>
+  </data>
+  <data name="PrivacyPolicy_Title" xml:space="preserve">
+    <value>Privacy Policy of the NPT Explorer App</value>
+  </data>
+  <data name="PrivacyPolicy_WithdrawHeader" xml:space="preserve">
+    <value>How you can withdraw consent</value>
+  </data>
+  <data name="Privacy_Policy_Label" xml:space="preserve">
+    <value>Polisi Preifatrwydd</value>
+  </data>
+  <data name="Profile_ActiveLabel" xml:space="preserve">
+    <value>Gweithredol</value>
+  </data>
+  <data name="Profile_AdventureBoardLabel" xml:space="preserve">
+    <value>Bwrdd Antur</value>
+  </data>
+  <data name="Profile_AdventurerLabel" xml:space="preserve">
+    <value>Mentrwr</value>
+  </data>
+  <data name="Profile_BadgesLabel" xml:space="preserve">
+    <value>Bathodynnau</value>
+  </data>
+  <data name="Profile_CategoryLabel" xml:space="preserve">
+    <value>Categori</value>
+  </data>
+  <data name="Profile_ChampionLabel" xml:space="preserve">
+    <value>Pencampwr</value>
+  </data>
+  <data name="Profile_CompleteLabel" xml:space="preserve">
+    <value>Cwblhau</value>
+  </data>
+  <data name="Profile_ConnectWithFriendsLabel" xml:space="preserve">
+    <value>Cysylltu gyda Ffrindiau</value>
+  </data>
+  <data name="Profile_CyclingLabel" xml:space="preserve">
+    <value>Beicio</value>
+  </data>
+  <data name="Profile_EarnedTrophiesLabel" xml:space="preserve">
+    <value>Rydych wedi ennill y tlysau canlynol</value>
+  </data>
+  <data name="Profile_ExplorerLabel" xml:space="preserve">
+    <value>Anturiwr</value>
+  </data>
+  <data name="Profile_HeroLabel" xml:space="preserve">
+    <value>Arwr</value>
+  </data>
+  <data name="Profile_JoinExplorerBoardErrorMessage" xml:space="preserve">
+    <value>There has been a problem setting your Adventure Board request at this time. Please try again later. If the problem continues please contact us at roadmapgi@gmail.com</value>
+  </data>
+  <data name="Profile_JoinExplorerBoardLabel" xml:space="preserve">
+    <value>Join Adventure Board</value>
+  </data>
+  <data name="Profile_LeaveAdventureBoard" xml:space="preserve">
+    <value>Leave Adventure Board</value>
+  </data>
+  <data name="Profile_LevelLabel" xml:space="preserve">
+    <value>Lefel</value>
+  </data>
+  <data name="Profile_MindfulnessLabel" xml:space="preserve">
+    <value>Ymwybyddiaeth Ofalgar</value>
+  </data>
+  <data name="Profile_RadioAll" xml:space="preserve">
+    <value>Pob un</value>
+  </data>
+  <data name="Profile_RadioFriends" xml:space="preserve">
+    <value>Ffrindiau</value>
+  </data>
+  <data name="Profile_RockstarLabel" xml:space="preserve">
+    <value>Seren roc</value>
+  </data>
+  <data name="Profile_SearchUsernamePlaceholder" xml:space="preserve">
+    <value>Chwilio am enw defnyddiwr</value>
+  </data>
+  <data name="Profile_StarLabel" xml:space="preserve">
+    <value>Seren</value>
+  </data>
+  <data name="Profile_TotalLabel" xml:space="preserve">
+    <value>Cyfanswm</value>
+  </data>
+  <data name="Profile_TrophiesLabel" xml:space="preserve">
+    <value>Tlysau</value>
+  </data>
+  <data name="Rate_The_App_Label" xml:space="preserve">
+    <value>Rhoi Sgôr i'r Ap</value>
+  </data>
+  <data name="Rating_ChallengeLabel" xml:space="preserve">
+    <value>Heriau Antur</value>
+  </data>
+  <data name="Rating_DailyAnswer" xml:space="preserve">
+    <value>Dyddiol</value>
+  </data>
+  <data name="Rating_DesignLabel" xml:space="preserve">
+    <value>Dylunio</value>
+  </data>
+  <data name="Rating_EaseOfUseLabel" xml:space="preserve">
+    <value>Hawdd ei ddefnyddio</value>
+  </data>
+  <data name="Rating_ExploreLabel" xml:space="preserve">
+    <value>Anturio</value>
+  </data>
+  <data name="Rating_HowOftenLabel" xml:space="preserve">
+    <value>Pa mor aml ydych chi'n defnyddio'r ap hwn?</value>
+  </data>
+  <data name="Rating_InformationLabel" xml:space="preserve">
+    <value>Gwybodaeth a ddarperir</value>
+  </data>
+  <data name="Rating_LessOftenAnswer" xml:space="preserve">
+    <value>Llai aml</value>
+  </data>
+  <data name="Rating_OnceAMonthAnswer" xml:space="preserve">
+    <value>O leiaf unwaith y mis</value>
+  </data>
+  <data name="Rating_OnceAWeekAnswer" xml:space="preserve">
+    <value>O leiaf unwaith yr wythnos</value>
+  </data>
+  <data name="Rating_RateButton" xml:space="preserve">
+    <value>Rhoi Sgôr i'r Ap</value>
+  </data>
+  <data name="Rating_RecommendationLabel" xml:space="preserve">
+    <value>Ar raddfa o 1 i 5 (1 = annhebygol iawn), 5 = tebygol iawn), pa mor debygol ydyw y byddech yn argymell yr ap hwn i ffrind neu aelod o'ch teulu?</value>
+  </data>
+  <data name="Rating_ResourcesLabel" xml:space="preserve">
+    <value>Adnoddau</value>
+  </data>
+  <data name="Rating_StarsLabel" xml:space="preserve">
+    <value> sêr</value>
+  </data>
+  <data name="Rating_StorePopupAccept" xml:space="preserve">
+    <value>Rhoi sgôr yn yr App Store</value>
+  </data>
+  <data name="Rating_StorePopupCancel" xml:space="preserve">
+    <value>Dim nawr</value>
+  </data>
+  <data name="Rating_StorePopupMessage" xml:space="preserve">
+    <value>Diolch am roi sgôr i Ap Anturiwr CNPT! Cliciwch isod i roi sgôr yn yr App Store.</value>
+  </data>
+  <data name="Rating_StorePopupTitle" xml:space="preserve">
+    <value>Rhoi sgôr i Anturiwr CNPT</value>
+  </data>
+  <data name="Rating_SubmitButton" xml:space="preserve">
+    <value>Cyflwyno</value>
+  </data>
+  <data name="Rating_SubmittedClose" xml:space="preserve">
+    <value>CAU</value>
+  </data>
+  <data name="Rating_SubmittedMessage" xml:space="preserve">
+    <value>Rydych wedi ennill eich Bathodyn Sgorio</value>
+  </data>
+  <data name="Rating_SubmittedShare" xml:space="preserve">
+    <value>RHANNU</value>
+  </data>
+  <data name="Rating_SubmittedTitle" xml:space="preserve">
+    <value>Llongyfarchiadau</value>
+  </data>
+  <data name="Rating_TrailLabel" xml:space="preserve">
+    <value>Llwybrau Antur</value>
+  </data>
+  <data name="Rating_WhichAppFeaturesHelpLabel" xml:space="preserve">
+    <value>Rhowch rif safle iddynt: o'r mwyaf defnyddiol (1) i'r lleiaf defnyddiol (4).</value>
+  </data>
+  <data name="Rating_WhichAppFeaturesLabel" xml:space="preserve">
+    <value>Pa nodweddion o'r ap ydych chi'n eu defnyddio fwyaf?</value>
+  </data>
+  <data name="Registration_ConfirmPasswordPlaceholder" xml:space="preserve">
+    <value>Teipiwch eich cyfrinair eto</value>
+  </data>
+  <data name="Registration_ContinueDescription" xml:space="preserve">
+    <value>Drwy barhau heb gyfrif, ni fydd rhai nodweddon ar gael.</value>
+  </data>
+  <data name="Registration_ContinueWithoutButton" xml:space="preserve">
+    <value>Parhau heb gyfrif</value>
+  </data>
+  <data name="Registration_CreatAccountButton" xml:space="preserve">
+    <value>Mewngofnodi</value>
+  </data>
+  <data name="Registration_CreatAccountMessage" xml:space="preserve">
+    <value>Crëwyd eich cyfrif gwestai yn llwyddiannus. Gallwch nawr fewngofnodi o'r hafan.</value>
+  </data>
+  <data name="Registration_CreateAccountTitle" xml:space="preserve">
+    <value>Creu cyfrif</value>
+  </data>
+  <data name="Registration_CreatePasswordTitle" xml:space="preserve">
+    <value>Creu cyfrinair</value>
+  </data>
+  <data name="Registration_CreateUsernameTitle" xml:space="preserve">
+    <value>Creu enw defnyddiwr</value>
+  </data>
+  <data name="Registration_EmailPlaceholder" xml:space="preserve">
+    <value>E-bost</value>
+  </data>
+  <data name="Registration_IAccept" xml:space="preserve">
+    <value>Rwy'n derbyn </value>
+  </data>
+  <data name="Registration_NextButton" xml:space="preserve">
+    <value>Nesaf</value>
+  </data>
+  <data name="Registration_PasswordPlaceholder" xml:space="preserve">
+    <value>Rhowch eich cyfrinair</value>
+  </data>
+  <data name="Registration_Privacy Policy" xml:space="preserve">
+    <value>Polisi Preifatrwydd</value>
+  </data>
+  <data name="Registration_RegisterButton" xml:space="preserve">
+    <value>Cofrestru</value>
+  </data>
+  <data name="Registration_TermsOfService" xml:space="preserve">
+    <value>Telerau'r Gwasanaeth</value>
+  </data>
+  <data name="Registration_UsernamePlaceholder" xml:space="preserve">
+    <value>Rhowch eich enw defnyddiwr</value>
+  </data>
+  <data name="Reset_Password_Label" xml:space="preserve">
+    <value>Ailosod cyfrinair</value>
+  </data>
+  <data name="Reset_Password_Placeholder_Label" xml:space="preserve">
+    <value>Teipiwch eich cyfrinair newydd.</value>
+  </data>
+  <data name="Reset_Password_Text_Label" xml:space="preserve">
+    <value>Mae'n rhaid i'r cyfrinair gynnwys o leiaf 8 nod, un rhif, a phrif lythrennau a llythrennau bach.</value>
+  </data>
+  <data name="Resources_GeneralLabel" xml:space="preserve">
+    <value>Cyffredinol</value>
+  </data>
+  <data name="Resources_GetInvolvedLabel" xml:space="preserve">
+    <value>Cymryd Rhan</value>
+  </data>
+  <data name="Resources_LearnMoreLabel" xml:space="preserve">
+    <value>Dysgu Mwy</value>
+  </data>
+  <data name="Resources_ResourcesLabel" xml:space="preserve">
+    <value>Adnoddau</value>
+  </data>
+  <data name="Save_Button" xml:space="preserve">
+    <value>Cadw</value>
+  </data>
+  <data name="Settings_EnglishLabel" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Settings_Label" xml:space="preserve">
+    <value>Gosodiadau</value>
+  </data>
+  <data name="Settings_WelshLabel" xml:space="preserve">
+    <value>Cymraeg</value>
+  </data>
+  <data name="SignIn_BackButton" xml:space="preserve">
+    <value>Yn ôl</value>
+  </data>
+  <data name="SignIn_EmailPlaceholder" xml:space="preserve">
+    <value>Rhowch eich cyfeiriad e-bost</value>
+  </data>
+  <data name="SignIn_ForgotPasswordLabel" xml:space="preserve">
+    <value>Wedi anghofio eich cyfrinair?</value>
+  </data>
+  <data name="SignIn_LoginButton" xml:space="preserve">
+    <value>Mewngofnodi</value>
+  </data>
+  <data name="SignIn_PasswordPlaceholder" xml:space="preserve">
+    <value>Rhowch eich cyfrinair</value>
+  </data>
+  <data name="SignIn_Title" xml:space="preserve">
+    <value>Mewngofnodi</value>
+  </data>
+  <data name="Sort_Label" xml:space="preserve">
+    <value>Trefnu</value>
+  </data>
+  <data name="TandC_Html" xml:space="preserve">
+    <value>&lt;html&gt;
+&lt;body&gt;
+&lt;h3&gt;TELERAU DEFNYDD&lt;/h3&gt;
+
+&lt;p&gt;
+Darllenwch y Telerau Defnydd hyn yn ofalus gan eu bod yn dermau sy’n llywodraethu eich defnydd o Ap Anturiwr CNPT (fe’u gelwir ar y cyd yn “Ap”) Rydym yn darparu’r gwasanaeth yn unol â’r Telerau Defnydd hyn yn unig ac os nad ydych yn cytuno i fod yn rhwym iddynt, yna chewch chi ddim defnyddio’r Ap. Gan ddefnyddio’r Ap, rydych yn cadarnhau eich bod wedi darllen, deall a derbyn y Telerau Defnydd hyn a’n Polisi Preifatrwydd. 
+&lt;/p&gt;
+&lt;p&gt;
+At ddibenion y Telerau Defnydd hyn:  
+ 
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Mae "Ap”&lt;/b&gt; yn golygu’r rhaglen feddalwedd sy’n cael ei darparu gan y Cwmni a lawrlwythwyd gennych chi ar unrhyw ddyfais electronig, o’r enw Anturiwr CNPT
+&lt;li&gt;&lt;b&gt;Mae "Cyfrif"&lt;/b&gt; yn golygu cyfrif unigryw sydd wedi’i greu er mwyn i chi allu defnyddio ein Ap.
+&lt;li&gt;&lt;b&gt;Mae "Cwmni"&lt;/b&gt; (y cyfeirir ato fel "y Cwmni", "Ni", "Ninnau" neu "Ein" yn y Cytundeb hwn) yn cyfeirio at \[Brosiect Map Ffordd Seilwaith Gwyrdd CNPT] .  
+&lt;li&gt;&lt;b&gt;Mae "Telerau Defnydd"&lt;/b&gt; (y cyfeirir atynt hefyd fel &lt;b&gt;"Telerau"&lt;/b&gt;) yn golygu’r Telerau Defnydd hyn sy’n ffurfio’r cytundeb cyfan rhyngoch chi a’r Cwmni mewn perthynas â defnyddio’r Ap. Cafodd y Cytundeb Telerau Defnydd hyn ei gynhyrchu gan &lt;a href="https://www.termsfeed.com/terms-conditions-generator/"&gt;TermsFeed Mobile App Terms and Conditions Generator&lt;/a&gt;, a’i addasu.
+&lt;li&gt;&lt;b&gt;Mae "Gwasanaeth Cyfryngau Cymdeithasol Trydydd Parti"&lt;/b&gt; yn golygu unrhyw wasanaethau neu gynnwys (yn cynnwys data, gwybodaeth, cynhyrchion neu wasanaethau) a ddarperir gan drydydd parti a all fod wedi’i arddangos a’i gynnwys ar yr ap, neu’n hygyrch gan yr Ap.
+&lt;/ul&gt;
+
+&lt;/p&gt;
+&lt;h3&gt;DEFNYDDIO’R AP&lt;/h3&gt;
+&lt;p&gt;
+Gobeithio y gwnewch chi fwynhau defnyddio ein Ap; rydym wedi cymryd gofal i roi trefn ar yr Ap, y cynnwys a’r llwybrau cerdded. Wedi dweud hynny, mae’n bosibl bod yr ap, y cynnwys neu’r llwybrau cerdded yn cynnwys gwallau, yn anghyflawn, neu wedi dyddio. 
+&lt;/p&gt;
+&lt;p&gt;
+Rydym wedi defnyddio amrywiol ffynonellau i ddilysu cywirdeb y llwybrau, ond nid ydym wedi profi pob llwybr drwy gerdded ar eu hyd a gallant gynnwys gwallau. Nid ydym yn derbyn unrhyw gyfrifoldeb am unrhyw orchmynion gwyro neu unrhyw anghysondebau yn y llwybrau, neu unrhyw newidiadau eraill i’r llwybrau (gan gynnwys eu cau), nac unrhyw ddifrod a all godi o gerddwyr yn tresbasu ar eiddo preifat. 
+&lt;/p&gt;
+&lt;p&gt;
+Mae Cyngor Bwrdeistref Sirol Castell-nedd Port Talbot yn ymrwymedig i ddarparu ansawdd o safon uchel yn y wybodaeth mae’n ei darparu ar yr Ap hwn, a gwnaed pob ymdrech i sicrhau bod y wybodaeth hon yn gywir ac yn gyfredol.
+&lt;/p&gt;
+&lt;p&gt;
+}Mae’r Ap yn defnyddio agweddau ar eich dyfais a all bennu’ch lleoliad. Gwnawn hyn er mwyn dangos eich lleoliad ar eich taith gerdded ddewisol. Pan fyddwch yn defnyddio’r Ap am y tro cyntaf, gofynnir i chi p’un a gaiff yr Ap ddefnyddio eich lleoliad a dan ba amgylchiadau. Cewch newid eich penderfyniadau ar unrhyw bryd yng ngosodiadau’r Ap a gallwch hefyd ddiffodd y gwasanaethau lleoliad ar unrhyw bryd. Ni fydd yr Ap yn gweithio gystal os yw’r gwasanaethau lleoliad wedi’u diffodd. Mae’r Ap yn defnyddio GPS eich ffôn ac mae hyn yn golygu bod y batri yn gwagio yn gynt na’r arfer. Mae’n bwysig dechrau arni gyda batri llawn bob tro a chael map neu ffurf arall o lywio. 
+&lt;/p&gt;
+&lt;p&gt;
+Mae’r Ap yn dibynnu ar nifer o bethau yn gweithio’n iawn er mwyn eich galluogi chi i fwynhau ei holl nodweddion. Mae nifer o’r rhain, megis eich cysylltiad â’r we, eich dyfais a’r App Store, y tu hwnt i’n rheolaeth yn llwyr. Er y gwnawn bopeth o fewn ein gallu i ddatrys problemau, nid ydym yn atebol i chi os na allwch ddefnyddio pob rhan, neu unrhyw ran, o’r Ap oherwydd cysylltiad gwael â’r we, cydrannau diffygiol yn eich dyfais, methiant yn yr App Store neu unrhyw beth arall na fyddai’n rhesymol disgwyl i ni ei reoli. 
+&lt;/p&gt;
+
+&lt;h4&gt;Defnydd Derbyniol&lt;/h4&gt; 
+
+&lt;p&gt;
+Ni ddylech ddefnyddio’r Ap i wneud unrhyw un o’r canlynol: 
+&lt;ul&gt;
+&lt;li&gt;torri’r gyfraith neu annog unrhyw weithgarwch anghyfreithlon; 
+&lt;li&gt;anfon neu uwchlwytho unrhyw beth sy’n ddifrïol, ymosodol, aflan neu wahaniaethol (neu y gellid ei ystyried yn un o’r rhain); 
+&lt;li&gt;torri ein hawliau eiddo deallusol, neu hawliau eiddo deallusol unrhyw un arall;
+&lt;li&gt;trosglwyddo unrhyw feddalwedd niweidiol, megis firysau; 
+&lt;li&gt;ceisio â chael mynediad anawdurdodedig i gyfrifiaduron, neu at ddata, systemau, cyfrifon neu rwydweithiau; neu 
+&lt;li&gt;amharu’n fwriadol ar weithrediad gwefan, ap, gweinydd neu fusnes rhywun arall. 
+&lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;h3&gt;CYFRIFON DEFNYDDWYR&lt;/h3&gt;
+
+&lt;p&gt;
+Pan ydych yn agor cyfrif gyda Ni, rhaid i chi ein darparu Ni â gwybodaeth gywir, cyflawn, a chyfredol bob amser. Mae methu â gwneud hynny yn golygu eich bod yn torri’r Telerau, a all arwain at derfynu eich cyfrif ar Ein Ap yn syth. 
+&lt;/p&gt;
+&lt;p&gt;
+Chi sy’n gyfrifol am ddiogelu’r cyfrinair yr ydych yn ei ddefnyddio ar gyfer yr Ap ac unrhyw weithgareddau neu weithredoedd dan eich cyfrinair, boed yw eich cyfrinair gyda’n Ap neu Wasanaeth Cyfryngau Cymdeithasol Trydydd Parti. 
+&lt;/p&gt;
+&lt;p&gt;
+Rydych yn cytuno i beidio â datgelu eich cyfrinair i unrhyw drydydd parti. Rhaid i chi Ein hysbysu yn syth os daw unrhyw achos o dorri rheolau diogelwch neu ddefnydd anawdurdodedig o’ch cyfrif i’ch sylw.  
+&lt;/p&gt;
+&lt;p&gt;
+Chewch chi ddim defnyddio enw unigolyn neu endid arall fel eich cyfrinair neu enw sy’n anghyfreithlon i’w ddefnyddio, enw neu nod masnach sy’n destun unrhyw hawliau unigolyn neu endid arall oni bai amdanoch Chi, heb awdurdodaeth briodol, neu enw sy’n ymosodol, aflednais neu aflan fel arall. 
+&lt;/p&gt;
+
+&lt;h3&gt;PREIFATRWYDD A GWYBODAETH&lt;/h3&gt;
+
+&lt;p&gt;
+Mae diogelu’ch gwybodaeth bersonol yn bwysig i ni. Mae ein Polisi Preifatrwydd yn egluro pa wybodaeth bersonol yr ydym yn ei chasglu gennych chi, sut a pham ydym ni’n casglu, storio, defnyddio a rhannu gwybodaeth o’r fath, eich hawliau mewn perthynas â hi a sut i gysylltu â ni ac awdurdodau goruchwylio os oes gennych ymholiad neu gŵyn. Gallwch ddarllen ein Polisi Preifatrwydd isod. 
+&lt;/p&gt;
+&lt;p&gt;
+Mae gennym yr hawl i gasglu a defnyddio data technegol a all gynnwys, er enghraifft, manylebau eich dyfais a’i meddalwedd er mwyn ein helpu ni i ddarparu diweddariadau meddalwedd, cymorth cynnyrch, a gwasanaethau eraill sy’n ymwneud â’r Ap. Yn ogystal, cawn ddefnyddio’r wybodaeth hon, cyn belled â’i bod ar ffurf nad oes modd eich adnabod chi drwyddi, i wella cynhyrchion neu gynnig gwasanaethau neu dechnolegau eraill i chi.
+&lt;/p&gt;
+
+&lt;h3&gt;YMWADIAD AC ATEBOLRWYDDh&lt;/h3&gt;
+
+&lt;p&gt;
+Ni ddehonglir unrhyw beth yn y Telerau hyn fel ymgais i gyfyngu ein hatebolrwydd am unrhyw anaf personol neu farwolaeth yn deillio o’n hesgeulustod, ein hatebolrwydd am dwyll neu gamgynrychiolaeth twyllodrus, na’i eithrio. Os ydych yn ddefnyddiwr, nid oes unrhyw beth yn y Telerau hyn a fydd yn effeithio eich hawliau statudol. 
+&lt;/p&gt;
+&lt;p&gt;
+Rydych yn defnyddio’r Ap ar eich menter eich hun. Darperir yr Ap hwn fel y mae a heb sicrwydd o unrhyw fath wedi’i fynegi neu ei gyfleu. Rydym yn gwrthod pob sicrwydd marchnadwyedd a ffitrwydd at ddiben penodol i’r graddau uchaf posibl. Nid ydym yn gwarantu nac yn gwneud unrhyw gynrychiolaethau mewn perthynas â’r defnydd o’r deunydd yn yr Ap o ran ei gywirdeb, ei ddibynadwyedd, neu fel arall, neu o ganlyniad i’w ddefnyddio.  Nid ydym yn gwarantu na fydd tarfu ar y swyddogaethau sydd wedi'u cynnwys yn y deunydd ar y safle hon, nac ychwaith y byddant yn rhydd rhag gwallau, nac y caiff diffygion eu cywiro. Yn unrhyw achos, ni fyddwn yn atebol am unrhyw golled neu ddifrod gan gynnwys, ymhlith eraill, colled neu ddifrod anuniongyrchol neu ganlyniadol, neu unrhyw golled neu ddifrod sy’n deillio o’r defnydd neu golli’r defnydd o ddata, neu elw, yn sgil defnyddio’r Ap, neu mewn cysylltiad â defnyddio’r Ap.  
+&lt;/p&gt;
+&lt;p&gt;
+Dylech wirio’n ofalus unrhyw lwybr yr ydych yn bwriadu ei gerdded er mwyn sicrhau ei fod yn addas ar eich cyfer chi, gan ystyried eich iechyd, eich lefel ffitrwydd a’ch profiad. Nid ydym yn darparu unrhyw gyngor neu gyfarwyddiadau ar unrhyw ymarfer neu weithgareddau eraill yr ydych yn ymgymryd â nhw. Nid ydym yn asesu’r risgiau ar unrhyw lwybr nac yn cynnal unrhyw asesiadau iechyd a diogelwch o’r llwybrau a ddengys ar yr Ap. Nid yw’r Ap hwn yn disodli unrhyw ganllawiau, codau neu rybuddion eraill sy'n berthnasol i'r llwybr. 
+&lt;/p&gt;
+&lt;p&gt;
+Dylech ddefnyddio’r Ap yn gyfrifol a dylech ddefnyddio eich beirniadaeth eich hun mewn perthynas ag unrhyw risgiau ar y llwybr, gan gynnwys y tywydd a chyflwr y llwybr ei hun, ymhlith eraill.  Dylid parhau i gydymffurfio ag unrhyw rybuddion ar y llwybr ei hun, hyd yn oed os yw’r Ap yn awgrymu bod y llwybr yn glir. 
+&lt;/p&gt;
+&lt;p&gt;
+Mae unrhyw amseroedd sy’n cael eu dangos yn yr Ap ar gyfer llwybrau yn amcan amseroedd yn unig ac yn seiliedig ar y rhagdybiaeth bod gennych lefel ffitrwydd gymedrol. Gall y teithiau cerdded gymryd llai neu fwy o amser yn dibynnu ar eich ffitrwydd, y tywydd a chyflwr y llwybr.  
+&lt;/p&gt;
+&lt;p&gt;
+Eich Atebolrwydd i Ni 
+Byddwch yn atebol i ni am unrhyw a phob cost, colled, traul a difrod, beth bynnag a sut bynnag y codant oherwydd:  
+&lt;ul&gt;
+&lt;li&gt;unrhyw achos o dorri’r Telerau hyn gennych chi; 
+&lt;li&gt;eich bod wedi torri unrhyw un o’n hawliau eiddo deallusol neu hawliau eiddo deallusol a berchnogir gan drydydd partïon; 
+&lt;li&gt;unrhyw gamymddygiad bwriadol gennych chi neu unrhyw weithred anghyfreithlon neu esgeulustod gennych chi; 
+&lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;h3&gt;GWASANAETHAU/DOLENNI ALLANOL&lt;/h3&gt;
+
+&lt;p&gt;
+Gall yr Ap eich galluogi chi i ddefnyddio gwasanaethau a gwefannau nad ydym yn berchen arnynt ac nad ydym yn eu gweithredu.
+Mae’r Ap yn gwneud pob ymdrech i sicrhau bod dolenni hyperdestun i Wefannau eraill a weithredir gan endidau eraill yn berthnasol ac yn darparu gwybodaeth ddefnyddiol. Os ydych yn dilyn unrhyw rai o’r dolenni i’r Gwefannau hyn, byddwch yn gadael yr Ap ac rydych yn gwneud hynny ar eich menter eich hun: eich cyfrifoldeb chi yw cymryd unrhyw fesurau angenrheidiol i warchod rhag firysau a/neu gyrff dinistriol/llygrol arall. 
+&lt;/p&gt;
+&lt;p&gt;
+Nid oes gennym unrhyw reolaeth dros y polisïau preifatrwydd neu ymarferion unrhyw wefannau neu wasanaethau trydydd parti, nac ychwaith yn cymryd unrhyw gyfrifoldeb drostynt. Cyn eu defnyddio, sicrhewch eich bod wedi darllen y telerau y cânt eu cynnig ar eu sail, a’ch bod yn cytuno iddynt, gan gynnwys y ffordd y cânt ddefnyddio’ch gwybodaeth bersonol. 
+&lt;/p&gt;
+&lt;p&gt;
+Nid ydym yn gyfrifol am unrhyw gynnwys ar y Gwefannau hyn y ceir dolenni atynt nac am ddibynadwyedd unrhyw wybodaeth a ddarperir oddi mewn iddynt ac nid ydym yn derbyn unrhyw atebolrwydd o gwbl (boed yn gyfreithiol neu fel arall) am golledion neu ddifrod gan gynnwys colledion neu ddifrod anuniongyrchol neu ganlyniadol, ymhlith eraill, sy’n deillio o ddefnydd y Gwefannau hyn y ceir dolenni atynt, neu mewn cysylltiad â’u defnyddio. Ni ddylid ystyried y ffaith y cynhwyswyd yr hyperddolenni i Wefannau eraill fel cymeradwyaeth o unrhyw fath gennym ni o’r Gwefannau hyn. 
+&lt;/p&gt;
+&lt;p&gt;
+O bryd i’w gilydd, gallwn newid y gwasanaethau allanol sydd ar gael ar yr Ap, neu gael gwared arnynt. .
+&lt;/p&gt;
+
+}&lt;h3&gt;CYFFREDINOL&lt;/h3&gt;
+
+&lt;p&gt;
+Drwy geisio a defnyddio’r Ap Anturiwr CNPT, sy’n cynnwys y Telerau Defnydd hyn, rydych (Y Defnyddiwr) yn derbyn y Telerau hyn, sy’n dod i rym ar ddyddiad eich defnydd cyntaf o’r Ap hwn. Cedwir yr hawl i newid y Telerau hyn yn ddirybudd ar unrhyw adeg. Os gwneir adolygiad, bydd y Telerau Defnydd diwygiedig yn cael eu dangos ar y tudalennau hyn a thrwy barhau i ddefnyddio’r Ap ar ôl adolygiad o’r fath, rydych yn derbyn y Telerau diwygiedig. 
+&lt;/p&gt;
+&lt;p&gt;
+Yn unol â Safonau’r Gymraeg a ddaeth i rym 1 Ebrill 2016, mae’r holl gynnwys yr ydym yn uniongyrchol gyfrifol amdano yn cael ei gyhoeddi’n ddwyieithog. Cyfrifoldeb y safleoedd allanol y ceir dolenni atynt yw cydymffurfio â’u cynllun Iaith Gymraeg eu hunain, os oes cynllun o’r fath yn bodoli, neu Safonau’r Gymraeg. 
+&lt;/p&gt;
+
+&lt;h3&gt;HAWLFRAINT&lt;/h3&gt;
+
+&lt;p&gt;
+Mae’r deunyddiau a geir ar yr Ap hwn, gan gynnwys unrhyw destun, logo, eicon, ffotograff a gwaith celf arall, ymhlith eraill, yn ddeunydd wedi’i warchod drwy hawlfraint sy’n perthyn i Gyngor Bwrdeistref Sirol Castell-nedd Port Talbot, oni nodir fel arall. 
+&lt;/p&gt;
+&lt;p&gt;
+Nid yw unrhyw ganiatâd i ddefnyddio’r deunyddiau dan hawlfraint ar yr Ap hwn yn berthnasol i unrhyw ddeunyddiau sydd wedi’u nodi’n eiddo drwy hawlfraint i unrhyw drydydd partïon: rhaid cael awdurdodaeth gan y trydydd partïon hynny eu hunain i ddefnyddio deunyddiau sy’n eiddo dan hawlfraint i’r trydydd partïon hynny. 
+&lt;/p&gt;
+&lt;p&gt;
+Dylid cyfeirio ceisiadau i ddefnyddio unrhyw ddeunydd dan hawlfraint \[enw sefydliad/mudiad/awdurdod] i Gyfarwyddiaeth y Prif Weithredwr, Y Ganolfan Ddinesig, Port Talbot SA13 1PJ 
+&lt;/p&gt;
+
+&lt;h3&gt;CYFREITHIOL&lt;/h3&gt;
+
+&lt;p&gt;
+Bydd y Telerau hyn yn cael eu llywodraethu yn unol â chyfreithiau Cymru a Lloegr, a’u dehongli yn unol â nhw. Bydd unrhyw anghydfod sy’n codi dan y Telerau hyn yn ddarostyngedig i awdurdodaeth unigryw llysoedd Cymru a Lloegr. 
+&lt;/p&gt;
+&lt;p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="Tempo_Time_Credit_Accepted_Label" xml:space="preserve">
+    <value>Credydau Amser Tempo Wedi’u Derbyn</value>
+  </data>
+  <data name="Terms_Of_Service_Label" xml:space="preserve">
+    <value>Telerau'r Gwasanaeth</value>
+  </data>
+  <data name="Time_Label" xml:space="preserve">
+    <value>Amser</value>
+  </data>
+  <data name="TrailDetails_AdventureHeader" xml:space="preserve">
+    <value>Llwybrau Antur</value>
+  </data>
+  <data name="TrailDetails_AdventureTrailsDescription" xml:space="preserve">
+    <value>Dewiswch y llwybr sy'n addas i chi</value>
+  </data>
+  <data name="TrailDetails_CheckInButton" xml:space="preserve">
+    <value>Cadarnhau Lleoliad</value>
+  </data>
+  <data name="TrailDetails_CollectedLabel" xml:space="preserve">
+    <value> Casglwyd</value>
+  </data>
+  <data name="TrailDetails_CollectLabelStart" xml:space="preserve">
+    <value>Casglwch </value>
+  </data>
+  <data name="TrailDetails_LogButton" xml:space="preserve">
+    <value>Cofnod</value>
+  </data>
+  <data name="TrailDetails_NavigateButton" xml:space="preserve">
+    <value>Llywio</value>
+  </data>
+  <data name="TrailNavigate_SatelliteLabel" xml:space="preserve">
+    <value>Lloeren</value>
+  </data>
+  <data name="TrailNavigate_TerrainLabel" xml:space="preserve">
+    <value>Tirwedd</value>
+  </data>
+  <data name="TrailsDetails_CollectLabelEnd" xml:space="preserve">
+    <value> bathodyn</value>
+  </data>
+  <data name="Trails_AdventureTrailsDescription" xml:space="preserve">
+    <value>Dewiswch y llwybr sy'n addas i chi</value>
+  </data>
+  <data name="Trails_AdventureTrailsHeader" xml:space="preserve">
+    <value>Llwybrau Antur</value>
+  </data>
+  <data name="Trails_DifficultyLabel" xml:space="preserve">
+    <value>Anhawster</value>
+  </data>
+  <data name="Trails_GoButton" xml:space="preserve">
+    <value>Mynd</value>
+  </data>
+  <data name="Trails_LengthLabel" xml:space="preserve">
+    <value>Hyd</value>
+  </data>
+  <data name="Trails_TimeLabel" xml:space="preserve">
+    <value>Amser</value>
+  </data>
+  <data name="Trail_CheckInButton" xml:space="preserve">
+    <value>Iawn</value>
+  </data>
+  <data name="Trail_CheckInDetail" xml:space="preserve">
+    <value>Cadarnhewch eich lleoliad</value>
+  </data>
+  <data name="Trail_CheckInSuccessButton" xml:space="preserve">
+    <value>Iawn</value>
+  </data>
+  <data name="Trail_CheckInSuccessDetail" xml:space="preserve">
+    <value>Wedi cadarnhau lleoliad</value>
+  </data>
+  <data name="Trail_CheckInSuccessTitle" xml:space="preserve">
+    <value>Cadarnhau Lleoliad</value>
+  </data>
+  <data name="Trail_CheckInTitle" xml:space="preserve">
+    <value>Cadarnhau Lleoliad ar y Llwybr</value>
+  </data>
+  <data name="Trail_CompleteQuestion" xml:space="preserve">
+    <value>Wnaethoch chi gwblhau'r llwybr? </value>
+  </data>
+  <data name="Trail_NoTrails" xml:space="preserve">
+    <value>Dim llwybrau i'w gweld</value>
+  </data>
+  <data name="Units_Label" xml:space="preserve">
+    <value>Label_Uned</value>
+  </data>
+  <data name="Website_Label" xml:space="preserve">
+    <value>Gwefan</value>
+  </data>
+  <data name="Whats_Going_On_Label" xml:space="preserve">
+    <value>Beth sy'n digwydd?</value>
+  </data>
+  <data name="Yes_Option" xml:space="preserve">
+    <value>Ie</value>
+  </data>
+</root>

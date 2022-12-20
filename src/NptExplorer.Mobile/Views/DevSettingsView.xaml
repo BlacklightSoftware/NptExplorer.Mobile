@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.DevSettingsView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:NptExplorer.Mobile.Converters;assembly=NptExplorer.Mobile"
+    xmlns:local="clr-namespace:NptExplorer.Mobile.ViewModels;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    x:TypeArguments="local:DevSettingsViewModel"
+    ControlTemplate="{StaticResource MainTemplate}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="True"
+    Shell.PresentationMode="ModalAnimated"
+    Shell.TabBarIsVisible="True"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <converters:RedGreenColorConverter x:Key="RedGreenColorConverter" />
+        <Style x:Key="HeaderStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="FillAndExpand">
+            <ScrollView>
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Label Style="{StaticResource HeaderStyle}">App Info</Label>
+                    <Label Text="{Binding ApiUri, StringFormat='Web API Url: {0}'}" />
+                    <Label Text="{Binding Version, StringFormat='Version: {0}'}" />
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                        <Label
+                            FontAttributes="Bold"
+                            HorizontalOptions="Start"
+                            Text="Internet connection:" />
+                        <Frame
+                            Padding="4,2,4,2"
+                            BorderColor="{Binding ApiAccessible, Converter={StaticResource RedGreenColorConverter}}"
+                            HorizontalOptions="EndAndExpand">
+                            <Label
+                                HorizontalOptions="EndAndExpand"
+                                Text="{Binding ApiAccessible}"
+                                TextColor="{Binding ApiAccessible, Converter={StaticResource RedGreenColorConverter}}" />
+                        </Frame>
+                    </StackLayout>
+
+                    <Label Style="{StaticResource HeaderStyle}">User Info</Label>
+                    <Label Text="{Binding UserId, StringFormat='User Id: {0}'}" />
+                    <Label Text="{Binding Username, StringFormat='User Name: {0}'}" />
+                </StackLayout>
+            </ScrollView>
+            <StackLayout VerticalOptions="End">
+                <Button
+                    Margin="20"
+                    Command="{Binding ClearUserCommand}"
+                    Text="Clear User" />
+                <Button
+                    Margin="20"
+                    Command="{Binding DoneCommand}"
+                    Text="Done" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</views:PageBase>

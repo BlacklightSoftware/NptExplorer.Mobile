@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.SignUpView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:NptExplorer.Mobile.Converters;assembly=NptExplorer.Mobile"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:viewModels="clr-namespace:NptExplorer.Mobile.ViewModels;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    ios:Page.PrefersHomeIndicatorAutoHidden="True"
+    ios:Page.UseSafeArea="True"
+    x:TypeArguments="viewModels:SignUpViewModel"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="False"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <extensions:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+
+        <Style x:Key="MainButton" TargetType="Button">
+            <Setter Property="CornerRadius">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="Android" Value="30" />
+                        <On Platform="iOS" Value="15" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Padding" Value="0,10,0,10" />
+            <Setter Property="WidthRequest" Value="300" />
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColour}" />
+            <Setter Property="TextColor" Value="{StaticResource GreyColour}" />
+        </Style>
+        <Style x:Key="SecondaryButton" TargetType="Button">
+            <Setter Property="CornerRadius">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="Android" Value="30" />
+                        <On Platform="iOS" Value="15" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Padding" Value="0,10,0,10" />
+            <Setter Property="WidthRequest" Value="300" />
+            <Setter Property="BackgroundColor" Value="{StaticResource TertiaryColour}" />
+            <Setter Property="TextColor" Value="{StaticResource GreyColour}" />
+        </Style>
+        <Style x:Key="LinkStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource WhiteColour}" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0,20,0,0" />
+        </Style>
+        <Style
+            x:Key="GeneralLabel"
+            ApplyToDerivedTypes="True"
+            TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource WhiteColour}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+        <Style
+            x:Key="SmallLabel"
+            ApplyToDerivedTypes="True"
+            TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource WhiteColour}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <Image
+                Margin="0,-20,0,0"
+                Aspect="AspectFill"
+                Source="background1" />
+            <StackLayout Margin="0,20,0,10" VerticalOptions="Fill">
+                <forms:CachedImage
+                    Aspect="AspectFit"
+                    DownsampleToViewSize="true"
+                    HeightRequest="80"
+                    HorizontalOptions="Fill"
+                    Source="tagline"
+                    WidthRequest="320" />
+                <StackLayout
+                    Margin="20,0"
+                    HorizontalOptions="Center"
+                    IsVisible="{Binding ShowOptions}"
+                    VerticalOptions="CenterAndExpand">
+                    <Button
+                        Command="{Binding CreateAccountCommand}"
+                        Style="{StaticResource MainButton}"
+                        Text="{extensions:Translate Login_CreateAccountButton}" />
+                    <Button
+                        Command="{Binding ContinueAsGuestCommand}"
+                        Style="{StaticResource SecondaryButton}"
+                        Text="{extensions:Translate Registration_ContinueWithoutButton}" />
+                    <Label Style="{StaticResource SmallLabel}" Text="{extensions:Translate Registration_ContinueDescription}" />
+                    <Label Style="{StaticResource LinkStyle}" Text="{extensions:Translate Login_ExistingAccountButton}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SignInCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <StackLayout
+                    Margin="20,0"
+                    HorizontalOptions="Center"
+                    IsVisible="{Binding ShowGuestSignUp}"
+                    VerticalOptions="CenterAndExpand">
+                    <Label Style="{StaticResource GeneralLabel}" Text="{extensions:Translate Guest_UsernameDescription}" />
+                    <Entry Placeholder="{extensions:Translate Registration_UsernamePlaceholder}" Text="{Binding DisplayName.Value}" />
+                    <Label
+                        IsVisible="{Binding DisplayName.IsValid, Converter={StaticResource InvertedBoolConverter}}"
+                        Style="{StaticResource ValidationErrorLabelStyle}"
+                        Text="{Binding DisplayName.Errors, Converter={StaticResource FirstValidationErrorConverter}}" />
+                    <Button
+                        Command="{Binding RegisterAsGuestCommand}"
+                        Style="{StaticResource MainButton}"
+                        Text="{extensions:Translate Registration_ContinueWithoutButton}" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</views:PageBase>

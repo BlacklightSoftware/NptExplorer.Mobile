@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.LanguageView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:viewModels="clr-namespace:NptExplorer.Mobile.ViewModels;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    ios:Page.PrefersHomeIndicatorAutoHidden="True"
+    ios:Page.UseSafeArea="True"
+    x:TypeArguments="viewModels:LanguageViewModel"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="False"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <Style x:Key="MainButton" TargetType="Frame">
+            <Setter Property="WidthRequest" Value="300" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="Margin" Value="0,5" />
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColour}" />
+        </Style>
+        <Style x:Key="SecondaryButton" TargetType="Frame">
+            <Setter Property="WidthRequest" Value="300" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="Margin" Value="0,5" />
+            <Setter Property="BackgroundColor" Value="{StaticResource TertiaryColour}" />
+        </Style>
+        <Style x:Key="ButtonLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource GreyColour}" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <Image
+                Margin="0,-20,0,0"
+                Aspect="AspectFill"
+                Source="background1" />
+            <StackLayout Margin="0,20,0,10" VerticalOptions="Fill">
+                <forms:CachedImage
+                    Aspect="AspectFit"
+                    DownsampleToViewSize="true"
+                    HeightRequest="80"
+                    HorizontalOptions="Fill"
+                    Source="tagline"
+                    WidthRequest="320" />
+                <StackLayout
+                    Margin="20,0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand">
+                    <Frame Style="{StaticResource MainButton}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS" Value="30" />
+                                <On Platform="Android" Value="30" />
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout HorizontalOptions="Center" Spacing="0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateWithWelsh}" />
+                            </StackLayout.GestureRecognizers>
+                            <Label Style="{StaticResource ButtonLabel}" Text="CROESO" />
+                            <Label Style="{StaticResource ButtonLabel}" Text="Parhau Cymraeg" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Style="{StaticResource SecondaryButton}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS" Value="30" />
+                                <On Platform="Android" Value="30" />
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout HorizontalOptions="Center" Spacing="0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateWithEnglish}" />
+                            </StackLayout.GestureRecognizers>
+                            <Label Style="{StaticResource ButtonLabel}" Text="WELCOME" />
+                            <Label Style="{StaticResource ButtonLabel}" Text="Continue in English" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</views:PageBase>

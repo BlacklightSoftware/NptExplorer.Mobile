@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    x:Class="NptExplorer.Mobile.Views.Resources.Indicator"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+
+
+    <ControlTemplate x:Key="MainTemplate">
+        <Grid BindingContext="{TemplateBinding BindingContext}">
+            <ContentPresenter Grid.Row="0" />
+
+            <!--  'Busy' indicator  -->
+            <StackLayout
+                Grid.Row="0"
+                BackgroundColor="{StaticResource WhiteColour}"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="{TemplateBinding BindingContext.IsBusy}"
+                VerticalOptions="FillAndExpand">
+
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <yummy:PancakeView
+                        BackgroundColor="{StaticResource MainColour}"
+                        Border="{yummy:BorderMarkup Color={StaticResource MainColour},
+                                                    Thickness='5'}"
+                        CornerRadius="40"
+                        HeightRequest="150"
+                        HorizontalOptions="FillAndExpand"
+                        WidthRequest="150">
+
+                        <StackLayout>
+                            <ActivityIndicator
+                                HeightRequest="48"
+                                HorizontalOptions="CenterAndExpand"
+                                IsRunning="{TemplateBinding BindingContext.IsBusy}"
+                                IsVisible="{TemplateBinding BindingContext.IsBusy}"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="48"
+                                Color="{StaticResource WhiteColour}" />
+                        </StackLayout>
+                    </yummy:PancakeView>
+                </StackLayout>
+
+            </StackLayout>
+        </Grid>
+    </ControlTemplate>
+
+</ResourceDictionary>

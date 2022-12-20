@@ -1,0 +1,1210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_Text1" xml:space="preserve">
+    <value>The </value>
+  </data>
+  <data name="About_Text10" xml:space="preserve">
+    <value>UK Community Renewal Funds</value>
+  </data>
+  <data name="About_Text11" xml:space="preserve">
+    <value>. The application was designed for all ages in the community of Neath Port Talbot County and aims to connect people with their greenspaces while learning more about local nature, heritage, and greenspaces.</value>
+  </data>
+  <data name="About_Text2" xml:space="preserve">
+    <value>NPT Explorer: Expand Your Adventure app</value>
+  </data>
+  <data name="About_Text3" xml:space="preserve">
+    <value> was developed as part of the </value>
+  </data>
+  <data name="About_Text4" xml:space="preserve">
+    <value>NPT Green Infrastructure Roadmap Project</value>
+  </data>
+  <data name="About_Text5" xml:space="preserve">
+    <value> at </value>
+  </data>
+  <data name="About_Text6" xml:space="preserve">
+    <value>Swansea University</value>
+  </data>
+  <data name="About_Text7" xml:space="preserve">
+    <value> in partnership with Neath Port Talbot Council and funded by the </value>
+  </data>
+  <data name="About_Text8" xml:space="preserve">
+    <value>UK Government</value>
+  </data>
+  <data name="About_Text9" xml:space="preserve">
+    <value> through the </value>
+  </data>
+  <data name="Activities_Label" xml:space="preserve">
+    <value>Activities</value>
+  </data>
+  <data name="Address_Label" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="AdventureTrails_StartPointLabel" xml:space="preserve">
+    <value>Starting Point:</value>
+  </data>
+  <data name="Adventure_ChallengesDescription" xml:space="preserve">
+    <value>Collect Adventure badges to become a top explorer</value>
+  </data>
+  <data name="Adventure_ChallengesLabel" xml:space="preserve">
+    <value>Adventure Challenges</value>
+  </data>
+  <data name="Adventure_NoChallengesLabel" xml:space="preserve">
+    <value>No challenges to view</value>
+  </data>
+  <data name="Adventure_NoTrailsLabel" xml:space="preserve">
+    <value>No trails to view</value>
+  </data>
+  <data name="Adventure_SearchLabel" xml:space="preserve">
+    <value>Where would you like to go?</value>
+  </data>
+  <data name="Adventure_TrailsDescription" xml:space="preserve">
+    <value>Choose the trail that works for you</value>
+  </data>
+  <data name="Adventure_TrailsLabel" xml:space="preserve">
+    <value>Adventure Trails</value>
+  </data>
+  <data name="Allow_Followers_Label" xml:space="preserve">
+    <value>Allow Followers</value>
+  </data>
+  <data name="BadgePopUp_CloseButton" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="BadgePopUp_HeaderLabel" xml:space="preserve">
+    <value>Well done!</value>
+  </data>
+  <data name="BadgePopUp_HeritageLabel" xml:space="preserve">
+    <value>You earned a Heritage badge</value>
+  </data>
+  <data name="BadgePopUp_NatureLabel" xml:space="preserve">
+    <value>You earned a Nature badge</value>
+  </data>
+  <data name="BadgePopUp_ShareButton" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="BadgePopUp_TrailLabel" xml:space="preserve">
+    <value>You earned a Trail badge</value>
+  </data>
+  <data name="BadgePopUp_WellbeingLabel" xml:space="preserve">
+    <value>You earned a Wellbeing badge</value>
+  </data>
+  <data name="Badge_CloseLabel" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Badge_HeritageLabel" xml:space="preserve">
+    <value>You earned a Heritage badge</value>
+  </data>
+  <data name="Badge_NatureLabel" xml:space="preserve">
+    <value>You earned a Nature badge</value>
+  </data>
+  <data name="Badge_ShareLabel" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="Badge_TrailLabel" xml:space="preserve">
+    <value>You earned a Trail badge</value>
+  </data>
+  <data name="Badge_WellbeingLabel" xml:space="preserve">
+    <value>You earned a Wellbeing badge</value>
+  </data>
+  <data name="Badge_WellDoneLabel" xml:space="preserve">
+    <value>Well done!</value>
+  </data>
+  <data name="Based_Location_Label" xml:space="preserve">
+    <value>Based on current location (0-10miles)</value>
+  </data>
+  <data name="Bus_Routes_Label" xml:space="preserve">
+    <value>Bus Routes</value>
+  </data>
+  <data name="Card_Title_Label" xml:space="preserve">
+    <value>Gnoll Park</value>
+  </data>
+  <data name="ChallengeDetails_AdventureHeader" xml:space="preserve">
+    <value>Adventure</value>
+  </data>
+  <data name="Challenges_AdventureChallengesDescription" xml:space="preserve">
+    <value>Collect Adventure badges to become a top Explorer!</value>
+  </data>
+  <data name="Challenges_AdventureChallengesHeader" xml:space="preserve">
+    <value>Adventure Challenges</value>
+  </data>
+  <data name="Challenges_BadgesLabel" xml:space="preserve">
+    <value>Badges</value>
+  </data>
+  <data name="Challenges_ChallengesLabel" xml:space="preserve">
+    <value>Challenges</value>
+  </data>
+  <data name="Challenges_GoButton" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="Challenge_BadgeErrorDescription" xml:space="preserve">
+    <value>We're sorry, there has been a problem logging your badge. Please try again later.</value>
+  </data>
+  <data name="Challenge_BadgeErrorTitle" xml:space="preserve">
+    <value>Unable to log badge</value>
+  </data>
+  <data name="Challenge_CheckIn" xml:space="preserve">
+    <value>Check in</value>
+  </data>
+  <data name="Challenge_CheckInButton" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Challenge_CheckInDetail" xml:space="preserve">
+    <value>Please check in</value>
+  </data>
+  <data name="Challenge_CheckInSuccessButton" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Challenge_CheckInSuccessDetail" xml:space="preserve">
+    <value>Check in completed</value>
+  </data>
+  <data name="Challenge_CheckInSuccessTitle" xml:space="preserve">
+    <value>Check In</value>
+  </data>
+  <data name="Challenge_CheckInTitle" xml:space="preserve">
+    <value>Check In</value>
+  </data>
+  <data name="Challenge_NoChallenges" xml:space="preserve">
+    <value>No challenges to view</value>
+  </data>
+  <data name="Confirm_Reset_Password_Placeholder_Label" xml:space="preserve">
+    <value>Please re-enter your password</value>
+  </data>
+  <data name="DeleteAccountConfirmation" xml:space="preserve">
+    <value>Your account has now been deleted.</value>
+  </data>
+  <data name="DeleteAccountError" xml:space="preserve">
+    <value>We are sorry, there has been a problem deleting your account at this time. Please try again later. If the problem continues, please contact us at roadmapgi@gmail.com</value>
+  </data>
+  <data name="DeleteAccount_Description" xml:space="preserve">
+    <value>Please note, deleting your account will remove all data relating to your progress on the NPT Explorer app as well. Are you sure you wish to continue?</value>
+  </data>
+  <data name="DeleteAccount_Title" xml:space="preserve">
+    <value>Delete my Account</value>
+  </data>
+  <data name="DetailsButton" xml:space="preserve">
+    <value>DETAILS</value>
+  </data>
+  <data name="Difficulty_Easy" xml:space="preserve">
+    <value>Easy</value>
+  </data>
+  <data name="Difficulty_SomeExertion" xml:space="preserve">
+    <value>Some exertion</value>
+  </data>
+  <data name="Difficulty_Strenuous" xml:space="preserve">
+    <value>Strenuous</value>
+  </data>
+  <data name="Difficulty_Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="Distance_Label" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="Distance_Miles_RadioButton" xml:space="preserve">
+    <value>Distance (miles)</value>
+  </data>
+  <data name="Distance_Time_RadioButton" xml:space="preserve">
+    <value>Distance (driving time)</value>
+  </data>
+  <data name="Distance_Walking_RadioButton" xml:space="preserve">
+    <value>Distance (walking time)</value>
+  </data>
+  <data name="Enum_ActivitiesCycling" xml:space="preserve">
+    <value>Cycling</value>
+  </data>
+  <data name="Enum_ActivitiesHiking" xml:space="preserve">
+    <value>Hiking</value>
+  </data>
+  <data name="Enum_ActivitiesLakes" xml:space="preserve">
+    <value>Lakes</value>
+  </data>
+  <data name="Enum_ActivitiesVolunteer" xml:space="preserve">
+    <value>Volunteer</value>
+  </data>
+  <data name="Enum_ActivitiesWaterfalls" xml:space="preserve">
+    <value>Waterfalls</value>
+  </data>
+  <data name="Enum_ActivitiesWildlife" xml:space="preserve">
+    <value>Wildlife Observation</value>
+  </data>
+  <data name="Enum_BadgeHeritage" xml:space="preserve">
+    <value>Heritage</value>
+  </data>
+  <data name="Enum_BadgeNature" xml:space="preserve">
+    <value>Nature</value>
+  </data>
+  <data name="Enum_BadgeTrail" xml:space="preserve">
+    <value>Trail</value>
+  </data>
+  <data name="Enum_BadgeWellbeing" xml:space="preserve">
+    <value>Wellbeing</value>
+  </data>
+  <data name="Enum_DifficultyEasy" xml:space="preserve">
+    <value>Easy</value>
+  </data>
+  <data name="Enum_DifficultySomeExertion" xml:space="preserve">
+    <value>Some Exertion</value>
+  </data>
+  <data name="Enum_DifficultyStrenuous" xml:space="preserve">
+    <value>Strenuous</value>
+  </data>
+  <data name="Enum_FacilityCafe" xml:space="preserve">
+    <value>Cafe/Restaurants</value>
+  </data>
+  <data name="Enum_FacilityDogFriendly" xml:space="preserve">
+    <value>Dog Friendly</value>
+  </data>
+  <data name="Enum_FacilityParking" xml:space="preserve">
+    <value>Parking</value>
+  </data>
+  <data name="Enum_FacilityPlayground" xml:space="preserve">
+    <value>Playground</value>
+  </data>
+  <data name="Enum_FacilityToilets" xml:space="preserve">
+    <value>Toilets</value>
+  </data>
+  <data name="Enum_FacilityWheelchair" xml:space="preserve">
+    <value>Wheelchair Access</value>
+  </data>
+  <data name="Enum_HabitatBrownfield" xml:space="preserve">
+    <value>Brownfield</value>
+  </data>
+  <data name="Enum_HabitatCanalside" xml:space="preserve">
+    <value>Canalside</value>
+  </data>
+  <data name="Enum_HabitatCoastal" xml:space="preserve">
+    <value>Coastal/Sand Dunes/Beach</value>
+  </data>
+  <data name="Enum_HabitatFen" xml:space="preserve">
+    <value>Fen</value>
+  </data>
+  <data name="Enum_HabitatGrassland" xml:space="preserve">
+    <value>Grassland/Meadow</value>
+  </data>
+  <data name="Enum_HabitatMoorland" xml:space="preserve">
+    <value>Moorland</value>
+  </data>
+  <data name="Enum_HabitatPasture" xml:space="preserve">
+    <value>Pasture/Rural Road</value>
+  </data>
+  <data name="Enum_HabitatPond" xml:space="preserve">
+    <value>Pond</value>
+  </data>
+  <data name="Enum_HabitatRiverside" xml:space="preserve">
+    <value>Riverside</value>
+  </data>
+  <data name="Enum_HabitatRockface" xml:space="preserve">
+    <value>Rockface</value>
+  </data>
+  <data name="Enum_HabitatUrban" xml:space="preserve">
+    <value>Urban</value>
+  </data>
+  <data name="Enum_HabitatWaterfall" xml:space="preserve">
+    <value>Waterfall</value>
+  </data>
+  <data name="Enum_HabitatWetland" xml:space="preserve">
+    <value>Wetland</value>
+  </data>
+  <data name="Enum_HabitatWoodland" xml:space="preserve">
+    <value>Woodland/Plantation</value>
+  </data>
+  <data name="Enum_TrailTimesFourToSix" xml:space="preserve">
+    <value>4-6 Hours</value>
+  </data>
+  <data name="Enum_TrailTimesSixToEight" xml:space="preserve">
+    <value>6-8 Hours</value>
+  </data>
+  <data name="Enum_TrailTimesTwoToFour" xml:space="preserve">
+    <value>2-4 Hours</value>
+  </data>
+  <data name="Enum_TrailTimeZeroToTwo" xml:space="preserve">
+    <value>0-2 Hours</value>
+  </data>
+  <data name="Error_ErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Error_LoadingLabel" xml:space="preserve">
+    <value>Loading issue</value>
+  </data>
+  <data name="Error_LocationServicesButton" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Error_LocationServicesDetail" xml:space="preserve">
+    <value>Allow location services to Navigate</value>
+  </data>
+  <data name="Error_LocationServicesTitle" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
+  <data name="Error_MapDetail" xml:space="preserve">
+    <value>We are sorry, there has been a problem with this map</value>
+  </data>
+  <data name="Error_MapOkButton" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Error_MapTitle" xml:space="preserve">
+    <value>Sorry!</value>
+  </data>
+  <data name="Error_OkButton" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Explore_DescriptionLabel" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Explore_HighlightsLabel" xml:space="preserve">
+    <value>Highlights</value>
+  </data>
+  <data name="Explore_HowToGetThereLabel" xml:space="preserve">
+    <value>How to get there</value>
+  </data>
+  <data name="Explore_LocationsLabel" xml:space="preserve">
+    <value>Locations</value>
+  </data>
+  <data name="Explore_NearestBusStopLabel" xml:space="preserve">
+    <value>Nearest Bus Stop</value>
+  </data>
+  <data name="Explore_NearestStopLabel" xml:space="preserve">
+    <value>Nearest Stop</value>
+  </data>
+  <data name="Explore_SharedLocation" xml:space="preserve">
+    <value>Shared Location</value>
+  </data>
+  <data name="Explore_What3Wordslabel" xml:space="preserve">
+    <value>What3Words</value>
+  </data>
+  <data name="Facilities_Label" xml:space="preserve">
+    <value>Facilities</value>
+  </data>
+  <data name="Filters_BadgeTypeLabel" xml:space="preserve">
+    <value>Badge Type</value>
+  </data>
+  <data name="Filters_BadgeTypeSub" xml:space="preserve">
+    <value>Based on current location (0-10 miles)</value>
+  </data>
+  <data name="Filters_DistanceDriving" xml:space="preserve">
+    <value>Distance (driving time)</value>
+  </data>
+  <data name="Filters_DistanceMiles" xml:space="preserve">
+    <value>Distance (miles)</value>
+  </data>
+  <data name="Filters_DistanceWalking" xml:space="preserve">
+    <value>Distance (walking time)</value>
+  </data>
+  <data name="Filters_HabitatLabel" xml:space="preserve">
+    <value>Habitat</value>
+  </data>
+  <data name="Filters_TrailsDifficultyLabel" xml:space="preserve">
+    <value>Trails/Difficulty</value>
+  </data>
+  <data name="Filters_TrailsDistanceLabel" xml:space="preserve">
+    <value>Trails/Distance</value>
+  </data>
+  <data name="Filters_TrailsTimeLabel" xml:space="preserve">
+    <value>Trails/Time</value>
+  </data>
+  <data name="Filter_ClearLabel" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Filter_Label" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="Filter_SaveLabel" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Filter_ShowCompleted" xml:space="preserve">
+    <value>Show completed</value>
+  </data>
+  <data name="ForgotPassword_CancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ForgotPassword_EmailDescription" xml:space="preserve">
+    <value>Please enter the email for you account. We will send you an email to reset your password</value>
+  </data>
+  <data name="ForgotPassword_EmailPlaceholder" xml:space="preserve">
+    <value>Please enter your email address</value>
+  </data>
+  <data name="ForgotPassword_SendButton" xml:space="preserve">
+    <value>Send email</value>
+  </data>
+  <data name="ForgotPassword_Title" xml:space="preserve">
+    <value>Forgot password</value>
+  </data>
+  <data name="General_And" xml:space="preserve">
+    <value> and </value>
+  </data>
+  <data name="General_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="General_EnterLocation" xml:space="preserve">
+    <value>Enter location</value>
+  </data>
+  <data name="General_Hours" xml:space="preserve">
+    <value>hrs</value>
+  </data>
+  <data name="General_Log" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="General_Minutes" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="General_Navigate" xml:space="preserve">
+    <value>Navigate</value>
+  </data>
+  <data name="General_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="General_Or" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="General_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Global_FiltersLabel" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="Global_FundingLabel" xml:space="preserve">
+    <value>This app is funded by the UK Government through the UK Community Renewal Fund</value>
+  </data>
+  <data name="Global_Greeting" xml:space="preserve">
+    <value>Hello, </value>
+  </data>
+  <data name="Global_Searching" xml:space="preserve">
+    <value>Searching...</value>
+  </data>
+  <data name="Guest_BackButton" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Guest_CreateButton" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+  <data name="Guest_Label" xml:space="preserve">
+    <value>Guest</value>
+  </data>
+  <data name="Guest_Title" xml:space="preserve">
+    <value>Create username</value>
+  </data>
+  <data name="Guest_UsernameDescription" xml:space="preserve">
+    <value>Username can be made up by letters and number. No special characters or email address</value>
+  </data>
+  <data name="Guest_UsernamePlaceholder" xml:space="preserve">
+    <value>Please enter your username</value>
+  </data>
+  <data name="Kilometers_Label" xml:space="preserve">
+    <value>Kilometers</value>
+  </data>
+  <data name="Landing_TapToStart" xml:space="preserve">
+    <value>Tap Button to Start</value>
+  </data>
+  <data name="Language_Label" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LocationServiceIosPermissionDetails" xml:space="preserve">
+    <value>This app needs access to your location to provide the requested functionality. You will need to allow this in your settings.</value>
+  </data>
+  <data name="LocationServiceIosPermissionTitle" xml:space="preserve">
+    <value>Location Services</value>
+  </data>
+  <data name="LocationServicePermissionDetails" xml:space="preserve">
+    <value>This app needs access to your location to provide the requested functionality</value>
+  </data>
+  <data name="LocationServicePermissionTitle" xml:space="preserve">
+    <value>Location Services</value>
+  </data>
+  <data name="Location_Near_You_Label" xml:space="preserve">
+    <value>Locations near you</value>
+  </data>
+  <data name="Login_CreateAccountButton" xml:space="preserve">
+    <value>Register an account</value>
+  </data>
+  <data name="Login_ExistingAccountButton" xml:space="preserve">
+    <value>Already have an account? Sign in</value>
+  </data>
+  <data name="Login_FacebookButton" xml:space="preserve">
+    <value>Continue with Facebook</value>
+  </data>
+  <data name="Login_GoogleButton" xml:space="preserve">
+    <value>Continue with Google</value>
+  </data>
+  <data name="Login_TermsAndConditions" xml:space="preserve">
+    <value>By continuing you agree to accept Terms of Service and Privacy Policy</value>
+  </data>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="Login_TwitterButton" xml:space="preserve">
+    <value>Continue with Twitter</value>
+  </data>
+  <data name="Log_Out_Label" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="Miles_Label" xml:space="preserve">
+    <value>Miles</value>
+  </data>
+  <data name="Navigation_AdventureTabLabel" xml:space="preserve">
+    <value>Adventure</value>
+  </data>
+  <data name="Navigation_ExploreTabLabel" xml:space="preserve">
+    <value>Explore</value>
+  </data>
+  <data name="Navigation_ProfileTabLabel" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Navigation_ResourcesTabLabel" xml:space="preserve">
+    <value>Resources</value>
+  </data>
+  <data name="No_Option" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Poi_BadgeCollectedLabel" xml:space="preserve">
+    <value>1 badge collected</value>
+  </data>
+  <data name="Poi_DidYouSeeQuestion" xml:space="preserve">
+    <value>Did you see</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph1a" xml:space="preserve">
+    <value>Under data protection laws, we are required to provide you with certain information about who we are, how we process your personal data and for what purposes, and your rights in relation to your personal data. This information is provided in</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph1b" xml:space="preserve">
+    <value>and it is important that you read that information.</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph2" xml:space="preserve">
+    <value>Before using this App, please indicate your consent to our processing of your personal data (including your name, contact details, device information, and cookies) as described in the policy.</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph3a" xml:space="preserve">
+    <value>YES</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph3b" xml:space="preserve">
+    <value>I consent to the Privacy Policy.</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph4a" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph4b" xml:space="preserve">
+    <value>I do not consent to the Privacy Policy.</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph5a" xml:space="preserve">
+    <value>Once you provide consent by selecting "YES", you may change your mind and withdraw consent at any time by contacting us at</value>
+  </data>
+  <data name="PrivacyPolicy_Paragraph5b" xml:space="preserve">
+    <value>but that will not affect the lawfulness of any processing carried out before you withdraw your consent.</value>
+  </data>
+  <data name="PrivacyPolicy_Title" xml:space="preserve">
+    <value>Privacy Policy of the NPT Explorer App</value>
+  </data>
+  <data name="PrivacyPolicy_WithdrawHeader" xml:space="preserve">
+    <value>How you can withdraw consent</value>
+  </data>
+  <data name="Privacy_Policy_Label" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="Profile_ActiveLabel" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Profile_AdventureBoardLabel" xml:space="preserve">
+    <value>Adventure Board</value>
+  </data>
+  <data name="Profile_AdventurerLabel" xml:space="preserve">
+    <value>Adventurer</value>
+  </data>
+  <data name="Profile_BadgesLabel" xml:space="preserve">
+    <value>Badges</value>
+  </data>
+  <data name="Profile_CategoryLabel" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Profile_ChampionLabel" xml:space="preserve">
+    <value>Champion</value>
+  </data>
+  <data name="Profile_CompleteLabel" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="Profile_ConnectWithFriendsLabel" xml:space="preserve">
+    <value>Connect with Friends</value>
+  </data>
+  <data name="Profile_CyclingLabel" xml:space="preserve">
+    <value>Cycling</value>
+  </data>
+  <data name="Profile_EarnedTrophiesLabel" xml:space="preserve">
+    <value>You have earned the following trophies</value>
+  </data>
+  <data name="Profile_ExplorerLabel" xml:space="preserve">
+    <value>Explorer</value>
+  </data>
+  <data name="Profile_HeroLabel" xml:space="preserve">
+    <value>Hero</value>
+  </data>
+  <data name="Profile_JoinExplorerBoardErrorMessage" xml:space="preserve">
+    <value>There has been a problem setting your Adventure Board request at this time. Please try again later. If the problem continues please contact us at roadmapgi@gmail.com</value>
+  </data>
+  <data name="Profile_JoinExplorerBoardLabel" xml:space="preserve">
+    <value>Join Adventure Board</value>
+  </data>
+  <data name="Profile_LeaveAdventureBoard" xml:space="preserve">
+    <value>Leave Adventure Board</value>
+  </data>
+  <data name="Profile_LevelLabel" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Profile_MindfulnessLabel" xml:space="preserve">
+    <value>Mindfulness</value>
+  </data>
+  <data name="Profile_RadioAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Profile_RadioFriends" xml:space="preserve">
+    <value>Friends</value>
+  </data>
+  <data name="Profile_RockstarLabel" xml:space="preserve">
+    <value>Rockstar</value>
+  </data>
+  <data name="Profile_SearchUsernamePlaceholder" xml:space="preserve">
+    <value>Search username</value>
+  </data>
+  <data name="Profile_StarLabel" xml:space="preserve">
+    <value>Star</value>
+  </data>
+  <data name="Profile_TotalLabel" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Profile_TrophiesLabel" xml:space="preserve">
+    <value>Trophies</value>
+  </data>
+  <data name="Rate_The_App_Label" xml:space="preserve">
+    <value>Rate The App</value>
+  </data>
+  <data name="Rating_ChallengeLabel" xml:space="preserve">
+    <value>Adventure Challenges</value>
+  </data>
+  <data name="Rating_DailyAnswer" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="Rating_DesignLabel" xml:space="preserve">
+    <value>Design</value>
+  </data>
+  <data name="Rating_EaseOfUseLabel" xml:space="preserve">
+    <value>Ease of use</value>
+  </data>
+  <data name="Rating_ExploreLabel" xml:space="preserve">
+    <value>Explore</value>
+  </data>
+  <data name="Rating_HowOftenLabel" xml:space="preserve">
+    <value>How often do you use this app?</value>
+  </data>
+  <data name="Rating_InformationLabel" xml:space="preserve">
+    <value>Information provided</value>
+  </data>
+  <data name="Rating_LessOftenAnswer" xml:space="preserve">
+    <value>Less Often</value>
+  </data>
+  <data name="Rating_OnceAMonthAnswer" xml:space="preserve">
+    <value>At least once a month</value>
+  </data>
+  <data name="Rating_OnceAWeekAnswer" xml:space="preserve">
+    <value>At Least once a week</value>
+  </data>
+  <data name="Rating_RateButton" xml:space="preserve">
+    <value>Rate the App</value>
+  </data>
+  <data name="Rating_RecommendationLabel" xml:space="preserve">
+    <value>On a scale of 1-5 (1 = very unlikely, 5 = very likely), how likley would you be to recommend this app to a friend or family member?</value>
+  </data>
+  <data name="Rating_ResourcesLabel" xml:space="preserve">
+    <value>Resources</value>
+  </data>
+  <data name="Rating_StarsLabel" xml:space="preserve">
+    <value> stars</value>
+  </data>
+  <data name="Rating_StorePopupAccept" xml:space="preserve">
+    <value>Rate on the App Store</value>
+  </data>
+  <data name="Rating_StorePopupCancel" xml:space="preserve">
+    <value>Not Now</value>
+  </data>
+  <data name="Rating_StorePopupMessage" xml:space="preserve">
+    <value>Thanks for rating the NPT Explorer App! Please click below to rate on the App Store.</value>
+  </data>
+  <data name="Rating_StorePopupTitle" xml:space="preserve">
+    <value>Rate NPT Explorer</value>
+  </data>
+  <data name="Rating_SubmitButton" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Rating_SubmittedClose" xml:space="preserve">
+    <value>CLOSE</value>
+  </data>
+  <data name="Rating_SubmittedMessage" xml:space="preserve">
+    <value>You have earned your Rating Badge</value>
+  </data>
+  <data name="Rating_SubmittedShare" xml:space="preserve">
+    <value>SHARE</value>
+  </data>
+  <data name="Rating_SubmittedTitle" xml:space="preserve">
+    <value>Congratulations</value>
+  </data>
+  <data name="Rating_TrailLabel" xml:space="preserve">
+    <value>Adventure Trails</value>
+  </data>
+  <data name="Rating_WhichAppFeaturesHelpLabel" xml:space="preserve">
+    <value>Rank them from most (1) to least useful (4)</value>
+  </data>
+  <data name="Rating_WhichAppFeaturesLabel" xml:space="preserve">
+    <value>Which app features do you use the most?</value>
+  </data>
+  <data name="Registration_ConfirmPasswordPlaceholder" xml:space="preserve">
+    <value>Please re-enter your password</value>
+  </data>
+  <data name="Registration_ContinueDescription" xml:space="preserve">
+    <value>By continuing without an account, some features will be unavaliable</value>
+  </data>
+  <data name="Registration_ContinueWithoutButton" xml:space="preserve">
+    <value>Continue without an account</value>
+  </data>
+  <data name="Registration_CreatAccountButton" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="Registration_CreatAccountMessage" xml:space="preserve">
+    <value>Your guest account has been successfully created. You can now Sign In from the homepage</value>
+  </data>
+  <data name="Registration_CreateAccountTitle" xml:space="preserve">
+    <value>Create account</value>
+  </data>
+  <data name="Registration_CreatePasswordTitle" xml:space="preserve">
+    <value>Create password</value>
+  </data>
+  <data name="Registration_CreateUsernameTitle" xml:space="preserve">
+    <value>Create username</value>
+  </data>
+  <data name="Registration_EmailPlaceholder" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Registration_IAccept" xml:space="preserve">
+    <value>I accept the </value>
+  </data>
+  <data name="Registration_NextButton" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Registration_PasswordPlaceholder" xml:space="preserve">
+    <value>Please enter your password</value>
+  </data>
+  <data name="Registration_Privacy Policy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="Registration_RegisterButton" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Registration_TermsOfService" xml:space="preserve">
+    <value>Terms of Service</value>
+  </data>
+  <data name="Registration_UsernamePlaceholder" xml:space="preserve">
+    <value>Please enter your username</value>
+  </data>
+  <data name="Reset_Password_Label" xml:space="preserve">
+    <value>Reset password</value>
+  </data>
+  <data name="Reset_Password_Placeholder_Label" xml:space="preserve">
+    <value>Please enter new password</value>
+  </data>
+  <data name="Reset_Password_Text_Label" xml:space="preserve">
+    <value>Password must be at least 8 characters long, contain 1 number and both upper and lower cases</value>
+  </data>
+  <data name="Resources_GeneralLabel" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Resources_GetInvolvedLabel" xml:space="preserve">
+    <value>Get Involved</value>
+  </data>
+  <data name="Resources_LearnMoreLabel" xml:space="preserve">
+    <value>Learn More</value>
+  </data>
+  <data name="Resources_ResourcesLabel" xml:space="preserve">
+    <value>Resources</value>
+  </data>
+  <data name="Save_Button" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Settings_EnglishLabel" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Settings_Label" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Settings_WelshLabel" xml:space="preserve">
+    <value>Welsh</value>
+  </data>
+  <data name="SignIn_BackButton" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="SignIn_EmailPlaceholder" xml:space="preserve">
+    <value>Please enter your email address</value>
+  </data>
+  <data name="SignIn_ForgotPasswordLabel" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="SignIn_LoginButton" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="SignIn_PasswordPlaceholder" xml:space="preserve">
+    <value>Please enter your password</value>
+  </data>
+  <data name="SignIn_Title" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="Sort_Label" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="TandC_Html" xml:space="preserve">
+    <value>&lt;html&gt;
+&lt;body&gt;
+&lt;h3&gt;TERMS OF USE&lt;/h3&gt;
+
+&lt;p&gt;
+Please read these Terms of Use carefully as they are the terms governing your use of the NPT Explorer App (collectively the “App"). We provide the service only on these Terms of Use and if you do not agree to be bound by them you may not use the App. By using the App you confirm that you have read, understood and accepted these Terms of Use and our Privacy Policy. 
+&lt;/p&gt;
+&lt;p&gt;
+For the purposes of these Terms of Use: 
+ 
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;"App"&lt;/b&gt; means the software program provided by the Company downloaded by you on any electronic device, named NPT Explorer
+&lt;li&gt;&lt;b&gt;"Account"&lt;/b&gt; means a unique account created for you to access our App.
+&lt;li&gt;&lt;b&gt;"Company"&lt;/b&gt; (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to [NPT Green Infrastructure Roadmap Project] .  
+&lt;li&gt;&lt;b&gt;"Terms of Use"&lt;/b&gt; (also referred as &lt;b&gt;"Terms"&lt;/b&gt;) mean these Terms of Use that form the entire agreement between you and the Company regarding the use of the App. This Terms of Use Agreement was generated by &lt;a href="https://www.termsfeed.com/terms-conditions-generator/"&gt;TermsFeed Mobile App Terms and Conditions Generator&lt;/a&gt;, and modified.
+&lt;li&gt;&lt;b&gt;"Third-party Social Media Service"&lt;/b&gt; means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the App.
+&lt;/ul&gt;
+
+&lt;/p&gt;
+&lt;h3&gt;USING THE APP&lt;/h3&gt;
+&lt;p&gt;
+We hope you enjoy using our App; great care has been taken in putting together the App, content and walking routes. However, it is possible that the app, content or walking routes may contain errors, be incomplete or out of date. 
+&lt;/p&gt;
+&lt;p&gt;
+We have used various sources to validate the accuracy of routes, however, we have not tested all routes by walking them and they may contain errors. We do not accept any responsibility for any diversion orders or any inaccuracies in the routes, or any other changes to the routes (including closure), nor any damage which might result from walkers trespassing on private property. 
+&lt;/p&gt;
+&lt;p&gt;
+Neath Port Talbot County Borough Council is committed to providing a high standard of quality in the information it provides on this App and every effort has been made to ensure that this information is accurate and up to date.
+&lt;/p&gt;
+&lt;p&gt;
+The App makes use of functionality on your device that can pinpoint your location. We do this in order to show your position on your chosen walk. When you open the App for the first time, you will be asked whether the App can use your location and in what circumstances. You can change your choices at any time in the App settings and you can also turn the location services off at any time. The App’s functionality will be reduced if location services are turned off. The App uses your phone’s GPS and this uses the battery faster than normal. Always start with a fully charged battery and have a map or alternative form of navigation available. 
+&lt;/p&gt;
+&lt;p&gt;
+The App relies on a number of things working properly to enable you to enjoy all of its features. Many of these, such as your internet connection, your device and the app store, are entirely outside our control. Although we will do everything we reasonably can to resolve issues, we are not responsible to you if you are unable to use all or any part of the App due to a poor internet connection, faulty components in your device, app store failure or anything else that it would not be reasonable to expect us to control. 
+&lt;/p&gt;
+
+&lt;h4&gt;Acceptable Use&lt;/h4&gt; 
+
+&lt;p&gt;
+You must not use the App to do any of the following things: 
+&lt;ul&gt;
+&lt;li&gt;break the law or encourage any unlawful activity; 
+&lt;li&gt;send or upload anything that is (or might be considered to be) defamatory, offensive, obscene or discriminatory; 
+&lt;li&gt;infringe our or anyone else’s intellectual property rights;
+&lt;li&gt;transmit any harmful software such as viruses; 
+&lt;li&gt;try to gain unauthorized access to computers, data, systems, accounts or networks; or 
+&lt;li&gt;deliberately disrupt the operation of anyone’s website, app, server or business. 
+&lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;h3&gt;USER ACCOUNTS&lt;/h3&gt;
+
+&lt;p&gt;
+When you create an account with Us, you must provide Us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on Our App.   
+&lt;/p&gt;
+&lt;p&gt;
+You are responsible for safeguarding the password that you use to access the App and for any activities or actions under your password, whether your password is with Our App or a Third-Party Social Media Service. 
+&lt;/p&gt;
+&lt;p&gt;
+You agree not to disclose your password to any third party. You must notify Us immediately upon becoming aware of any breach of security or unauthorized use of your account.  
+&lt;/p&gt;
+&lt;p&gt;
+You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than You without appropriate authorization, or a name that is otherwise offensive, vulgar or obscene. 
+&lt;/p&gt;
+
+&lt;h3&gt;PRIVACY AND INFORMATION&lt;/h3&gt;
+
+&lt;p&gt;
+Protecting your personal information is important to us. Our Privacy Policy explains what personal information we collect from you, how and why we collect, store, use and share such information, your rights in relation to it and how to contact us and supervisory authorities if you have a query or complaint. You can view our Privacy Policy below. 
+&lt;/p&gt;
+&lt;p&gt;
+We may collect and use technical data that might include, for example, the specifications of your device and its software in order to help us provide software updates, product support, and other services related to the App. We may also use this information, as long as it is in a form that does not personally identify you, to improve products or to offer new services or technologies to you.
+&lt;/p&gt;
+
+&lt;h3&gt;DISCLAIMER AND LIABILITY&lt;/h3&gt;
+
+&lt;p&gt;
+Nothing in these Terms is to be interpreted as an attempt to limit or exclude our liability for any personal injury or death resulting from our negligence, our liability for fraud or fraudulent misrepresentation. If you are a consumer, nothing in these Terms shall affect your statutory rights. 
+&lt;/p&gt;
+&lt;p&gt;
+You use the App at your own risk. The App is provided as is and without warranties of any kind either expressed or implied. We disclaim all warranties of merchantability and fitness for a particular purpose to the fullest extent permissible. We do not warrant or make any representations regarding the use of or the result of the use of the material in the App in terms of its correctness, accuracy, reliability, or otherwise.  We do not warrant that the functions contained in the material contained in this site will be uninterrupted or error free, or that defects will be corrected. In no event will we be liable for any loss or damage including, without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from use or loss of use of, data, or profits, arising out of or in connection with the use of the App. 
+&lt;/p&gt;
+&lt;p&gt;
+You should carefully check any route that you intend to walk to ensure that it is suitable for you, taking into account your health, level of fitness and experience. We do not provide any advice or instructions on any exercise or other activities that you undertake. We do not assess the risks in any route or conduct any health and safety assessments of the routes shown on the App. The App is not a replacement for any other guidance, codes or warnings that apply to the route. 
+&lt;/p&gt;
+&lt;p&gt;
+You should use the App responsibly and you should use your own judgement in relation to any risks on the route, including without limitation the weather conditions and the condition of the route itself. Any warnings on the route itself must still be complied with even if the App might suggest that the route is otherwise clear.  
+&lt;/p&gt;
+&lt;p&gt;
+Any timings shown in the App for routes are estimates only and are based on the assumption of you having an average fitness level. The walks may take less or more time depending on your fitness, the weather conditions and the condition of the route.  
+&lt;/p&gt;
+&lt;p&gt;
+Your Liability to Us 
+You will be liable to us for any and all costs, losses, expenses and damages whatsoever and howsoever arising from:  
+&lt;ul&gt;
+&lt;li&gt;any breach by you of these Terms; 
+&lt;li&gt;your infringement of any of our intellectual property rights or those intellectual property rights owned by third parties; 
+&lt;li&gt;any wilful misconduct by you or any negligent or unlawful act or omission by you; 
+&lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;h3&gt;EXTERNAL SERVICES/LINKS&lt;/h3&gt;
+
+&lt;p&gt;
+The App may enable you to access services and websites that we do not own or operate.
+The App makes every effort to ensure that the hypertext links from to other Websites operated by other entities are relevant and provide useful information. If you access into any of these linked Websites you will leave the App and you do so at your own risk: it is for you to take any necessary measures to guard against viruses and/or other destructive/corruptive bodies. 
+&lt;/p&gt;
+&lt;p&gt;
+We have no control over, and assume no responsibility for, the privacy policies or practices of any third-party web sites or services. Before using them, make sure you have read and agreed to the terms on which they are being offered to you including the way in which they may use your personal information. 
+&lt;/p&gt;
+&lt;p&gt;
+We are not responsible for any of the contents of these linked Websites or the reliability of any information provided within them and we accept no liability whatsoever (whether legal or otherwise) for any losses or damages including, without limitation, indirect or consequential losses or damages, arising out of or in connection with the use of any of these linked Websites. The inclusion of hyperlinks to other Websites should not be taken, in any way, to be an endorsement of any kind of these Websites by ourselves. 
+&lt;/p&gt;
+&lt;p&gt;
+From time to time, we may change or remove the external services that are made available through the App.
+&lt;/p&gt;
+
+&lt;h3&gt;GENERAL&lt;/h3&gt;
+
+&lt;p&gt;
+The access and use of the NPT Explorer App featuring these Terms of Use constitutes your (The User’s) acceptance of these Terms, which take effect from the date on which you first use this App. We reserve the right to revise these Terms at any time without notice. If a revision takes place, the revised Terms of Use will be displayed on these pages and the continued use of the App after such a revision has been made shall constitute your acceptance of the revised Terms. 
+&lt;/p&gt;
+&lt;p&gt;
+In line with Welsh Language Standards which came into effect 1 April 2016, all content for which we are directly responsible is published bilingually. It is the responsibility of the external sites to which we link to conform with their own Welsh Language Scheme, if such a scheme exists, or with the Welsh Language Standards. 
+&lt;/p&gt;
+
+&lt;h3&gt;COPYRIGHT&lt;/h3&gt;
+
+&lt;p&gt;
+The materials featured on this App, including without limitation any text, logo, icons, photographs and other artwork is copyright protected material of Neath Port Talbot County Borough Council unless otherwise indicated. 
+&lt;/p&gt;
+&lt;p&gt;
+Any permission to use copyright materials on this App does not extend to any materials which are identified as being the copyright of any third parties: authorisation to use materials which are the copyright of third parties must be obtained from those third parties themselves. 
+&lt;/p&gt;
+&lt;p&gt;
+Requests to use any copyright material of [name of institution/organisation/authority] should be addressed to the Chief Executive’s Directorate, Civic Centre, Port Talbot SA13 1PJ 
+&lt;/p&gt;
+
+&lt;h3&gt;LEGAL&lt;/h3&gt;
+
+&lt;p&gt;
+These Terms shall be governed by and construed in accordance with the laws of England and Wales. Any dispute arising under these Terms shall be subject to the exclusive jurisdiction of the courts of England and Wales. 
+&lt;/p&gt;
+&lt;p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="Tempo_Time_Credit_Accepted_Label" xml:space="preserve">
+    <value>Tempo Time Credit Accepted</value>
+  </data>
+  <data name="Terms_Of_Service_Label" xml:space="preserve">
+    <value>Terms of Service</value>
+  </data>
+  <data name="Time_Label" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="TrailDetails_AdventureHeader" xml:space="preserve">
+    <value>Adventure Trails</value>
+  </data>
+  <data name="TrailDetails_AdventureTrailsDescription" xml:space="preserve">
+    <value>Choose the trail that works for you</value>
+  </data>
+  <data name="TrailDetails_CheckInButton" xml:space="preserve">
+    <value>Check In</value>
+  </data>
+  <data name="TrailDetails_CollectedLabel" xml:space="preserve">
+    <value> collected</value>
+  </data>
+  <data name="TrailDetails_CollectLabelStart" xml:space="preserve">
+    <value>Collect a </value>
+  </data>
+  <data name="TrailDetails_LogButton" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="TrailDetails_NavigateButton" xml:space="preserve">
+    <value>Navigate</value>
+  </data>
+  <data name="TrailNavigate_SatelliteLabel" xml:space="preserve">
+    <value>Satellite</value>
+  </data>
+  <data name="TrailNavigate_TerrainLabel" xml:space="preserve">
+    <value>Terrain</value>
+  </data>
+  <data name="TrailsDetails_CollectLabelEnd" xml:space="preserve">
+    <value> badge</value>
+  </data>
+  <data name="Trails_AdventureTrailsDescription" xml:space="preserve">
+    <value>Choose the trail that works for you</value>
+  </data>
+  <data name="Trails_AdventureTrailsHeader" xml:space="preserve">
+    <value>Adventure Trails</value>
+  </data>
+  <data name="Trails_DifficultyLabel" xml:space="preserve">
+    <value>Difficulty</value>
+  </data>
+  <data name="Trails_GoButton" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="Trails_LengthLabel" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="Trails_TimeLabel" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="Trail_CheckInButton" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Trail_CheckInDetail" xml:space="preserve">
+    <value>Please check in</value>
+  </data>
+  <data name="Trail_CheckInSuccessButton" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Trail_CheckInSuccessDetail" xml:space="preserve">
+    <value>Check in completed</value>
+  </data>
+  <data name="Trail_CheckInSuccessTitle" xml:space="preserve">
+    <value>Check In</value>
+  </data>
+  <data name="Trail_CheckInTitle" xml:space="preserve">
+    <value>Trail Check In</value>
+  </data>
+  <data name="Trail_CompleteQuestion" xml:space="preserve">
+    <value>Did you complete the trail</value>
+  </data>
+  <data name="Trail_NoTrails" xml:space="preserve">
+    <value>No trails to view</value>
+  </data>
+  <data name="Units_Label" xml:space="preserve">
+    <value>Units_Label</value>
+  </data>
+  <data name="Website_Label" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="Whats_Going_On_Label" xml:space="preserve">
+    <value>What's going on</value>
+  </data>
+  <data name="Yes_Option" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+</root>

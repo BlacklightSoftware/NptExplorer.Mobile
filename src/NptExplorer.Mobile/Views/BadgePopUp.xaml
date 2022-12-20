@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup
+    x:Class="NptExplorer.Mobile.Views.BadgePopUp"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:enums="clr-namespace:NptExplorer.Core.Enums;assembly=NptExplorer.Core"
+    xmlns:viewModels="clr-namespace:NptExplorer.Mobile.ViewModels;assembly=NptExplorer.Mobile"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:TypeArguments="enums:BadgeTypes"
+    IsLightDismissEnabled="True"
+    Size="300,300"
+    Color="Transparent">
+
+    <xct:Popup.BindingContext>
+        <viewModels:BadgePopUpViewModel />
+    </xct:Popup.BindingContext>
+
+    <xct:Popup.Resources>
+        <Style x:Key="GeneralLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="BadgeImage" TargetType="Image">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="HeightRequest" Value="100" />
+            <Setter Property="WidthRequest" Value="100" />
+        </Style>
+        <Style x:Key="LinkLabel" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource PurpleColour}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="End" />
+            <Setter Property="VerticalOptions" Value="End" />
+        </Style>
+    </xct:Popup.Resources>
+
+    <Frame CornerRadius="20" HasShadow="True">
+        <StackLayout Margin="20" VerticalOptions="Fill">
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label Style="{StaticResource HeaderLabelStyle}" Text="{xct:Translate Badge_WellDoneLabel}" />
+                <StackLayout IsVisible="{Binding ShowNature}">
+                    <Image Source="naturebadge" Style="{StaticResource BadgeImage}" />
+                    <Label Style="{StaticResource GeneralLabel}" Text="{xct:Translate Badge_NatureLabel}" />
+                </StackLayout>
+                <StackLayout IsVisible="{Binding ShowWellbeing}">
+                    <Image Source="wellbeingbadge" Style="{StaticResource BadgeImage}" />
+                    <Label Style="{StaticResource GeneralLabel}" Text="{xct:Translate Badge_WellbeingLabel}" />
+                </StackLayout>
+                <StackLayout IsVisible="{Binding ShowHeritage}">
+                    <Image Source="heritagebadge" Style="{StaticResource BadgeImage}" />
+                    <Label Style="{StaticResource GeneralLabel}" Text="{xct:Translate Badge_HeritageLabel}" />
+                </StackLayout>
+                <StackLayout IsVisible="{Binding ShowTrail}">
+                    <Image Source="trailbadge" Style="{StaticResource BadgeImage}" />
+                    <Label Style="{StaticResource GeneralLabel}" Text="{xct:Translate Badge_TrailLabel}" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout
+                HorizontalOptions="End"
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Margin="5,10"
+                    IsVisible="False"
+                    Text="{xct:Translate Badge_ShareLabel}" />
+                <Label
+                    Margin="5,10"
+                    Style="{StaticResource LinkLabel}"
+                    Text="{xct:Translate Badge_CloseLabel}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Close_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</xct:Popup>

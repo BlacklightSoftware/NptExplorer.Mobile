@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xct:Popup
+    x:Class="NptExplorer.Mobile.Views.Adventure.PoiPopUp"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:adventure="clr-namespace:NptExplorer.Mobile.ViewModels.Adventure;assembly=NptExplorer.Mobile"
+    xmlns:models="clr-namespace:NptExplorer.Mobile.Models;assembly=NptExplorer.Mobile"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:TypeArguments="models:ChallengePoi"
+    IsLightDismissEnabled="True"
+    Size="300,300"
+    Color="Transparent">
+
+    <xct:Popup.BindingContext>
+        <adventure:PoiPopUpViewModel />
+    </xct:Popup.BindingContext>
+
+    <xct:Popup.Resources>
+        <Style x:Key="PoiButton" TargetType="ImageButton">
+            <Setter Property="WidthRequest" Value="80" />
+            <Setter Property="HeightRequest" Value="80" />
+            <Setter Property="CornerRadius" Value="40" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+        </Style>
+        <Style x:Key="LinkLabel" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource PurpleColour}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="End" />
+            <Setter Property="VerticalOptions" Value="End" />
+        </Style>
+    </xct:Popup.Resources>
+
+    <Frame CornerRadius="20" HasShadow="True">
+        <StackLayout Padding="20,20,20,0">
+            <Label
+                Margin="0,0,10,10"
+                HorizontalTextAlignment="Center"
+                Style="{StaticResource HeaderLabelStyle}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{xct:Translate Poi_DidYouSeeQuestion}" />
+                        <Span Text=" " />
+                        <Span Text="{Binding PointOfInterest.Label}" />
+                        <Span Text="?" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <ImageButton
+                Clicked="Yes_Tapped"
+                Source="yes"
+                Style="{StaticResource PoiButton}" />
+            <ImageButton
+                Clicked="No_Tapped"
+                Source="no"
+                Style="{StaticResource PoiButton}" />
+            <Label Style="{StaticResource LinkLabel}" Text="Cancel">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Cancel_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </Frame>
+</xct:Popup>

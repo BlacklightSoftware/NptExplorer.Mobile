@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.RatingView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:icons="clr-namespace:NptExplorer.Mobile.Constants;assembly=NptExplorer.Mobile"
+    xmlns:viewModels="clr-namespace:NptExplorer.Mobile.ViewModels;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    iOsSpecific:Page.PrefersHomeIndicatorAutoHidden="True"
+    iOsSpecific:Page.UseSafeArea="True"
+    x:TypeArguments="viewModels:RatingViewModel"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <Style x:Key="LinkLabel" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource PurpleColour}" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                Margin="0,5,5,5"
+                HorizontalOptions="Fill"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <Label
+                    HorizontalOptions="Start"
+                    IsVisible="True"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.ArrowLeft}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Style="{StaticResource TitleLabel}" Text="{extensions:Translate Rate_The_App_Label}" />
+                <Label
+                    Margin="0,0,10,0"
+                    HorizontalOptions="End"
+                    Style="{StaticResource LinkLabel}"
+                    Text="{extensions:Translate Rating_SubmitButton}"
+                    VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ExecuteSubmitRating}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <StackLayout Margin="20">
+
+                <FlexLayout>
+                    <Label Text="{extensions:Translate Rating_EaseOfUseLabel}" />
+                    <Label Text="{extensions:Translate Rating_StarsLabel}" />
+                </FlexLayout>
+                <FlexLayout>
+                    <Label Text="{extensions:Translate Rating_InformationLabel}" />
+                    <Label Text="{extensions:Translate Rating_StarsLabel}" />
+                </FlexLayout>
+                <FlexLayout>
+                    <Label Text="{extensions:Translate Rating_DesignLabel}" />
+                    <Label Text="{extensions:Translate Rating_StarsLabel}" />
+                </FlexLayout>
+                <Label Text="{extensions:Translate Rating_HowOftenLabel}" />
+                <RadioButton Content="{extensions:Translate Rating_DailyAnswer}" GroupName="usage" />
+                <RadioButton Content="{extensions:Translate Rating_OnceAWeekAnswer}" GroupName="usage" />
+                <RadioButton Content="{extensions:Translate Rating_OnceAMonthAnswer}" GroupName="usage" />
+                <RadioButton Content="{extensions:Translate Rating_LessOftenAnswer}" GroupName="usage" />
+                <Label Text="{extensions:Translate Rating_WhichAppFeaturesLabel}" />
+                <Label Text="{extensions:Translate Rating_WhichAppFeaturesHelpLabel}" />
+                <FlexLayout>
+                    <Label Text="{extensions:Translate Rating_ExploreLabel}" />
+                    <Picker>
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </FlexLayout>
+
+                <FlexLayout>
+                    <Label Text="{extensions:Translate Rating_ChallengeLabel}" />
+                    <Picker>
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </FlexLayout>
+
+                <FlexLayout>
+                    <Label Text="{extensions:Translate Rating_TrailLabel}" />
+                    <Picker>
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </FlexLayout>
+
+                <FlexLayout>
+                    <Label Text="{extensions:Translate Rating_ResourcesLabel}" />
+                    <Picker>
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </FlexLayout>
+                <Label Text="{extensions:Translate Rating_RecommendationLabel}" />
+                <FlexLayout>
+                    <Label>1</Label>
+                    <Label>2</Label>
+                    <Label>3</Label>
+                    <Label>4</Label>
+                </FlexLayout>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</views:PageBase>

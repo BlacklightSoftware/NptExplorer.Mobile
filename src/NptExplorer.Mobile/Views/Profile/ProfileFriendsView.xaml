@@ -1,0 +1,134 @@
+﻿<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.Profile.ProfileFriendsView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:NptExplorer.Mobile.Controls;assembly=NptExplorer.Mobile"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:icons="clr-namespace:NptExplorer.Mobile.Constants;assembly=NptExplorer.Mobile"
+    xmlns:profilefriends="clr-namespace:NptExplorer.Mobile.ViewModels.Profile;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    iOsSpecific:Page.PrefersHomeIndicatorAutoHidden="True"
+    iOsSpecific:Page.UseSafeArea="True"
+    x:TypeArguments="profilefriends:ProfileFriendsViewModel"
+    ControlTemplate="{StaticResource MainTemplate}"
+    Shell.ForegroundColor="Black"
+    Shell.NavBarHasShadow="False"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True">
+
+    <ContentPage.Resources>
+        <extensions:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                Margin="20,10"
+                HorizontalOptions="Fill"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <Label
+                    HorizontalOptions="Start"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.ArrowLeft}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label
+                    x:Name="TitleLabel"
+                    Style="{StaticResource TitleLabel}"
+                    Text="{Binding ScreenTitle}" />
+                <Label Style="{StaticResource TitleIcon}" Text="{x:Static icons:IconConstants.Cog}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToSettings}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <StackLayout Margin="20,5,20,5">
+                <Label
+                    FontSize="Medium"
+                    Style="{StaticResource HeaderLabelStyle}"
+                    Text="{extensions:Translate Profile_ConnectWithFriendsLabel}" />
+                <controls:ImageEntry
+                    HorizontalOptions="Fill"
+                    Image="search"
+                    ImageAlignment="Left"
+                    ImageHeight="10"
+                    ImageWidth="10"
+                    Placeholder="{extensions:Translate Profile_SearchUsernamePlaceholder}"
+                    Text="{Binding SearchValue}">
+                    <controls:ImageEntry.Behaviors>
+                        <extensions:EventToCommandBehavior Command="{Binding SearchCommand}" EventName="TextChanged" />
+                    </controls:ImageEntry.Behaviors>
+                </controls:ImageEntry>
+                <StackLayout Margin="0,0,0,0">
+                    <ListView
+                        HasUnevenRows="True"
+                        ItemsSource="{Binding SearchResult}"
+                        SelectionMode="None"
+                        SeparatorVisibility="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Margin="0,10,0,0" ColumnDefinitions="1*,5*,4*">
+                                        <Image
+                                            Grid.Column="0"
+                                            Margin="0,0,10,0"
+                                            HeightRequest="50"
+                                            HorizontalOptions="Center"
+                                            Source="profile_icon"
+                                            VerticalOptions="Center"
+                                            WidthRequest="50" />
+                                        <Label
+                                            Grid.Column="1"
+                                            FontSize="Medium"
+                                            HorizontalTextAlignment="Start"
+                                            Text="{Binding Name}"
+                                            VerticalTextAlignment="Center" />
+                                        <controls:IdButton
+                                            Grid.Column="2"
+                                            Margin="0,0,10,0"
+                                            Padding="10,0"
+                                            BackgroundColor="#B80007"
+                                            Clicked="FollowButton_Clicked"
+                                            CornerRadius="15"
+                                            FontAttributes="None"
+                                            FontSize="10"
+                                            HeightRequest="40"
+                                            Id="{Binding Id}"
+                                            ImageSource="unfollow_icon"
+                                            IsVisible="{Binding IsFriend}"
+                                            Text="Unfollow"
+                                            TextColor="White"
+                                            WidthRequest="100" />
+                                        <controls:IdButton
+                                            Grid.Column="2"
+                                            Margin="0,0,10,0"
+                                            Padding="10,0"
+                                            BackgroundColor="#01FF8F"
+                                            Clicked="FollowButton_Clicked"
+                                            CornerRadius="15"
+                                            FontAttributes="None"
+                                            FontSize="10"
+                                            HeightRequest="40"
+                                            Id="{Binding Id}"
+                                            ImageSource="follow_icon"
+                                            IsVisible="{Binding IsFriend, Converter={StaticResource InvertedBoolConverter}}"
+                                            Text="Follow"
+                                            TextColor="Black"
+                                            WidthRequest="100" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</views:PageBase>

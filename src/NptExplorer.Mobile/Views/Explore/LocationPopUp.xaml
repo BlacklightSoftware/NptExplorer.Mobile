@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xct:Popup
+    x:Class="NptExplorer.Mobile.Views.Explore.LocationPopUp"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:NptExplorer.Mobile.Converters;assembly=NptExplorer.Mobile"
+    xmlns:explore="clr-namespace:NptExplorer.Mobile.ViewModels.Explore;assembly=NptExplorer.Mobile"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:models="clr-namespace:NptExplorer.Mobile.Models;assembly=NptExplorer.Mobile"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:TypeArguments="models:ExploreLocation"
+    IsLightDismissEnabled="True"
+    Size="300,300"
+    Color="White">
+
+    <xct:Popup.BindingContext>
+        <explore:LocationPopUpViewModel />
+    </xct:Popup.BindingContext>
+
+    <xct:Popup.Resources>
+        <converters:ImageToUriConverter x:Key="ImageToUriConverter" />
+        <converters:FacilityIconConvertor x:Key="FacilityIconConvertor" />
+        <Style x:Key="NavigateButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}" />
+            <Setter Property="TextColor" Value="{StaticResource WhiteColour}" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+        <Style x:Key="FacilityIcon" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontFamily" Value="IconFont" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </xct:Popup.Resources>
+
+    <StackLayout Padding="20,20,20,0">
+        <Label Style="{StaticResource HeaderLabelStyle}" Text="{Binding Location.LocationName}" />
+        <forms:CachedImage
+            Aspect="AspectFill"
+            DownsampleToViewSize="true"
+            HeightRequest="150"
+            HorizontalOptions="Center"
+            Source="{Binding Location.PrimaryImage, Converter={StaticResource ImageToUriConverter}}"
+            WidthRequest="320" />
+        <StackLayout BindableLayout.ItemsSource="{Binding Location.Facilities}" Orientation="Horizontal">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Label
+                        Margin="5,0,0,15"
+                        Style="{StaticResource FacilityIcon}"
+                        Text="{Binding ., Converter={StaticResource FacilityIconConvertor}}" />
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="End" Orientation="Horizontal">
+            <Button
+                Clicked="NavigateButton_OnClicked"
+                Style="{StaticResource NavigateButton}"
+                Text="{xct:Translate General_Navigate}" />
+        </StackLayout>
+    </StackLayout>
+
+</xct:Popup>

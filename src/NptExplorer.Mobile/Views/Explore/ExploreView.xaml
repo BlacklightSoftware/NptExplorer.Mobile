@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.Explore.ExploreView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:NptExplorer.Mobile.Controls;assembly=NptExplorer.Mobile"
+    xmlns:converters="clr-namespace:NptExplorer.Mobile.Converters;assembly=NptExplorer.Mobile"
+    xmlns:explore="clr-namespace:NptExplorer.Mobile.ViewModels.Explore;assembly=NptExplorer.Mobile"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:icons="clr-namespace:NptExplorer.Mobile.Constants;assembly=NptExplorer.Mobile"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    ios:Page.PrefersHomeIndicatorAutoHidden="True"
+    ios:Page.UseSafeArea="True"
+    x:TypeArguments="explore:ExploreViewModel"
+    ControlTemplate="{StaticResource MainTemplate}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True">
+
+    <ContentPage.Resources>
+        <converters:FacilityIconConvertor x:Key="FacilityIconConvertor" />
+        <converters:ImageToUriConverter x:Key="ImageToUriConverter" />
+
+        <Style x:Key="FacilityIcon" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontFamily" Value="IconFont" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <Style x:Key="MainContainer" TargetType="Grid">
+            <Setter Property="ColumnSpacing" Value="0" />
+            <Setter Property="RowSpacing" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="HeightRequest" Value="340" />
+            <Setter Property="WidthRequest" Value="340" />
+        </Style>
+        <Style x:Key="SearchContainer" TargetType="Grid">
+            <Setter Property="ColumnSpacing" Value="0" />
+            <Setter Property="RowSpacing" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0, 0, 0, 5" />
+            <Setter Property="HeightRequest" Value="240" />
+            <Setter Property="WidthRequest" Value="340" />
+        </Style>
+        <Style x:Key="MapContainer" TargetType="Frame">
+            <Setter Property="WidthRequest">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="300" />
+                        <On Platform="iOS" Value="320" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="HeightRequest" Value="300" />
+            <Setter Property="HorizontalOptions" Value="Fill" />
+            <Setter Property="Margin" Value="10,0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="IsClippedToBounds" Value="True" />
+            <Setter Property="CornerRadius">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Single">
+                        <On Platform="Android" Value="20" />
+                        <On Platform="iOS" Value="15" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MapHeader" TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="{StaticResource MainColour}" />
+        </Style>
+        <Style x:Key="MapHeaderLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource WhiteColour}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="Padding" Value="5,0,5,0" />
+        </Style>
+        <Style x:Key="MapButton" TargetType="Button">
+            <Setter Property="Margin" Value="0,0,5,5" />
+            <Setter Property="WidthRequest" Value="100" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColour}" />
+            <Setter Property="CornerRadius">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="Android" Value="30" />
+                        <On Platform="iOS" Value="15" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                Margin="20,5"
+                HorizontalOptions="Fill"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <Label
+                    HorizontalOptions="Start"
+                    IsVisible="False"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.ArrowLeft}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label
+                    x:Name="TitleLabel"
+                    HorizontalOptions="StartAndExpand"
+                    Style="{StaticResource TitleLabel}"
+                    Text="{Binding ScreenTitle}" />
+                <Label
+                    HorizontalOptions="End"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.Cog}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToSettings}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <Grid
+                Margin="20,5"
+                ColumnDefinitions="8*, 1*, 1*"
+                RowDefinitions="Auto">
+                <controls:ImageEntry
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="Fill"
+                    Image="search"
+                    ImageAlignment="Left"
+                    ImageHeight="10"
+                    ImageWidth="10"
+                    Placeholder="{extensions:Translate General_EnterLocation}"
+                    Text="{Binding SearchValue}">
+                    <controls:ImageEntry.Behaviors>
+                        <extensions:EventToCommandBehavior Command="{Binding SearchCommand}" EventName="TextChanged" />
+                    </controls:ImageEntry.Behaviors>
+                </controls:ImageEntry>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Padding="0"
+                    FontFamily="IconFont"
+                    FontSize="30"
+                    HorizontalOptions="End"
+                    Text="{x:Static icons:IconConstants.Tune}"
+                    TextColor="{StaticResource BlackColour}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToFilter}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Padding="0"
+                    FontFamily="IconFont"
+                    FontSize="30"
+                    HorizontalOptions="End"
+                    Text="{x:Static icons:IconConstants.Map}"
+                    TextColor="{StaticResource BlackColour}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToMap}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+
+            <StackLayout Margin="20,5" IsVisible="{Binding ShowingMap}">
+                <StackLayout HeightRequest="340">
+                    <Label Style="{StaticResource HeaderLabelStyle}" Text="{extensions:Translate Location_Near_You_Label}" />
+                    <CollectionView
+                        EmptyView="No locations picked up."
+                        IsVisible="{Binding ShowingMap}"
+                        ItemsLayout="HorizontalList"
+                        ItemsSource="{Binding Locations}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid
+                                    ColumnDefinitions="1*,1*"
+                                    RowDefinitions="6*,1*"
+                                    Style="{StaticResource MainContainer}">
+                                    <Frame
+                                        Grid.Row="0"
+                                        Grid.ColumnSpan="2"
+                                        Style="{StaticResource MapContainer}">
+                                        <Grid
+                                            ColumnSpacing="0"
+                                            RowDefinitions="1*,5*"
+                                            RowSpacing="0">
+                                            <StackLayout
+                                                Grid.Row="0"
+                                                Orientation="Horizontal"
+                                                Style="{StaticResource MapHeader}">
+                                                <Label
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Style="{StaticResource MapHeaderLabel}"
+                                                    Text="{Binding LocationName}" />
+                                            </StackLayout>
+                                            <Grid
+                                                Grid.Row="1"
+                                                ColumnDefinitions="1*"
+                                                ColumnSpacing="0"
+                                                RowDefinitions="1*"
+                                                RowSpacing="0">
+                                                <forms:CachedImage
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    Margin="0"
+                                                    Aspect="AspectFill"
+                                                    DownsampleToViewSize="true"
+                                                    HeightRequest="300"
+                                                    HorizontalOptions="Fill"
+                                                    Source="{Binding PrimaryImage, Converter={StaticResource ImageToUriConverter}}"
+                                                    WidthRequest="320" />
+                                                <controls:IdButton
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    Clicked="SearchedItem_Clicked"
+                                                    HorizontalOptions="End"
+                                                    Id="{Binding Id}"
+                                                    Style="{StaticResource MapButton}"
+                                                    Text="{extensions:Translate DetailsButton}"
+                                                    VerticalOptions="End" />
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                    <FlexLayout
+                                        Grid.Row="1"
+                                        Margin="20,0"
+                                        AlignItems="end"
+                                        JustifyContent="SpaceBetween">
+                                        <StackLayout
+                                            BindableLayout.ItemsSource="{Binding Facilities}"
+                                            HorizontalOptions="Center"
+                                            Orientation="Horizontal">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label Style="{StaticResource FacilityIcon}" Text="{Binding ., Converter={StaticResource FacilityIconConvertor}}" />
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </StackLayout>
+                                    </FlexLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                <Label
+                    Margin="20,10,20,5"
+                    Style="{StaticResource HeaderLabelStyle}"
+                    Text="{extensions:Translate Whats_Going_On_Label}" />
+                <StackLayout>
+                    <ListView
+                        HasUnevenRows="true"
+                        ItemsSource="{Binding Tweets}"
+                        SelectionMode="None"
+                        SeparatorColor="{StaticResource MainColour}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid
+                                        Padding="0,10,5,10"
+                                        ColumnSpacing="0"
+                                        RowSpacing="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="70" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <forms:CachedImage
+                                            Grid.Row="0"
+                                            Grid.RowSpan="3"
+                                            Grid.Column="0"
+                                            Margin="10,0,10,0"
+                                            Aspect="AspectFit"
+                                            DownsampleToViewSize="true"
+                                            HeightRequest="70"
+                                            HorizontalOptions="Center"
+                                            Source="{Binding UserProfileImageUrl}"
+                                            VerticalOptions="Start"
+                                            WidthRequest="70">
+                                            <forms:CachedImage.Transformations>
+                                                <fftransformations:CircleTransformation />
+                                            </forms:CachedImage.Transformations>
+                                        </forms:CachedImage>
+
+                                        <Grid
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            ColumnDefinitions="6*,2*,2*">
+                                            <Label
+                                                Grid.Column="0"
+                                                Margin="0,0,0,0"
+                                                FontSize="14"
+                                                Text="{Binding UserName}"
+                                                TextColor="#000000" />
+                                            <Label
+                                                Grid.Column="1"
+                                                Margin="0,0,0,0"
+                                                FontSize="14"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding UserTwitterHandle}"
+                                                TextColor="#6d747a" />
+                                            <Label
+                                                Grid.Column="2"
+                                                Margin="0,0,2,0"
+                                                FontSize="14"
+                                                HorizontalOptions="End"
+                                                Text="{Binding DisplayPostedDate}"
+                                                TextColor="#6d747a" />
+                                        </Grid>
+                                        <Grid
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            Margin="0,5,0,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Label
+                                                Grid.Row="0"
+                                                FontSize="15"
+                                                Text="{Binding Content}"
+                                                TextColor="#000000" />
+                                        </Grid>
+
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Margin="20,5" IsVisible="{Binding ShowingLocations}">
+                <StackLayout>
+                    <Label Style="{StaticResource HeaderLabelStyle}" Text="{extensions:Translate Location_Near_You_Label}" />
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding LocationCount}" />
+                                <Span Text=" " />
+                                <Span Text="{extensions:Translate Explore_LocationsLabel}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <ListView
+                    HasUnevenRows="True"
+                    ItemsSource="{Binding SearchList}"
+                    SelectionMode="None"
+                    SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid
+                                    ColumnDefinitions="1*,1*"
+                                    RowDefinitions="6*,1*"
+                                    Style="{StaticResource SearchContainer}">
+                                    <Frame
+                                        Grid.Row="0"
+                                        Grid.ColumnSpan="2"
+                                        Style="{StaticResource MapContainer}">
+                                        <Grid
+                                            ColumnSpacing="0"
+                                            RowDefinitions="1*,5*"
+                                            RowSpacing="0">
+                                            <StackLayout
+                                                Grid.Row="0"
+                                                Orientation="Horizontal"
+                                                Style="{StaticResource MapHeader}">
+                                                <Label
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Style="{StaticResource MapHeaderLabel}"
+                                                    Text="{Binding LocationName}" />
+                                            </StackLayout>
+                                            <Grid
+                                                Grid.Row="1"
+                                                ColumnDefinitions="1*"
+                                                ColumnSpacing="0"
+                                                RowDefinitions="1*"
+                                                RowSpacing="0">
+                                                <forms:CachedImage
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    Margin="0"
+                                                    Aspect="AspectFill"
+                                                    DownsampleToViewSize="true"
+                                                    HeightRequest="300"
+                                                    HorizontalOptions="Fill"
+                                                    Source="{Binding PrimaryImage, Converter={StaticResource ImageToUriConverter}}"
+                                                    WidthRequest="320" />
+                                                <StackLayout
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    HorizontalOptions="End"
+                                                    VerticalOptions="End">
+                                                    <controls:IdButton
+                                                        Clicked="SearchedItem_Clicked"
+                                                        Id="{Binding Id}"
+                                                        Style="{StaticResource MapButton}"
+                                                        Text="{extensions:Translate DetailsButton}" />
+                                                </StackLayout>
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                    <FlexLayout
+                                        Grid.Row="1"
+                                        Margin="20,0,20,5"
+                                        AlignItems="end"
+                                        JustifyContent="SpaceBetween">
+                                        <StackLayout BindableLayout.ItemsSource="{Binding Facilities}" Orientation="Horizontal">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label Style="{StaticResource FacilityIcon}" Text="{Binding ., Converter={StaticResource FacilityIconConvertor}}" />
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </StackLayout>
+                                    </FlexLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</views:PageBase>

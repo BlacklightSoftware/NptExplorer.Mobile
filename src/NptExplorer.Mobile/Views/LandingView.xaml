@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.LandingView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:viewModels="clr-namespace:NptExplorer.Mobile.ViewModels;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    ios:Page.PrefersHomeIndicatorAutoHidden="True"
+    ios:Page.UseSafeArea="True"
+    x:TypeArguments="viewModels:LandingViewModel"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="False"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <Style x:Key="MainButton" TargetType="Button">
+            <Setter Property="CornerRadius">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="Android" Value="30" />
+                        <On Platform="iOS" Value="15" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Padding" Value="0,10,0,10" />
+            <Setter Property="WidthRequest" Value="300" />
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColour}" />
+            <Setter Property="TextColor" Value="{StaticResource GreyColour}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <Image
+                Margin="0,-20,0,0"
+                Aspect="AspectFill"
+                Source="background1" />
+            <StackLayout Margin="0,20,0,10" VerticalOptions="Fill">
+                <forms:CachedImage
+                    Aspect="AspectFit"
+                    DownsampleToViewSize="true"
+                    HeightRequest="80"
+                    HorizontalOptions="Fill"
+                    Source="tagline"
+                    WidthRequest="320">
+                    <forms:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenDevSettingsCommand}" NumberOfTapsRequired="2" />
+                    </forms:CachedImage.GestureRecognizers>
+                </forms:CachedImage>
+                <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <Button
+                        x:Name="SplashScreenStart"
+                        Command="{Binding NavigateToLanguage}"
+                        Style="{StaticResource MainButton}"
+                        Text="{extensions:Translate Landing_TapToStart}" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</views:PageBase>

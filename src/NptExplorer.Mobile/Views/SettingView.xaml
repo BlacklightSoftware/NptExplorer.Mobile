@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.SettingView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:icons="clr-namespace:NptExplorer.Mobile.Constants;assembly=NptExplorer.Mobile"
+    xmlns:settingsview="clr-namespace:NptExplorer.Mobile.ViewModels;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views"
+    iOsSpecific:Page.PrefersHomeIndicatorAutoHidden="True"
+    iOsSpecific:Page.UseSafeArea="True"
+    x:TypeArguments="settingsview:SettingViewModel"
+    ControlTemplate="{StaticResource MainTemplate}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <Style x:Key="LinkLabel" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource PurpleColour}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="0,5" />
+        </Style>
+        <Style x:Key="PanelHeader" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+        </Style>
+        <ControlTemplate x:Key="FilterRadioTemplate">
+            <Frame
+                Padding="0"
+                BackgroundColor="White"
+                BorderColor="White"
+                HasShadow="False"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
+                <Frame.CornerRadius>
+                    <OnPlatform x:TypeArguments="x:Single">
+                        <On Platform="iOS" Value="15" />
+                        <On Platform="Android" Value="30" />
+                    </OnPlatform>
+                </Frame.CornerRadius>
+                <Grid Margin="4" ColumnDefinitions="1*, 9*">
+                    <ContentPresenter Grid.Column="1" />
+                    <Grid
+                        Grid.Column="0"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start">
+                        <Ellipse
+                            Fill="White"
+                            HeightRequest="18"
+                            HorizontalOptions="Center"
+                            Stroke="#140D38"
+                            StrokeThickness="1"
+                            VerticalOptions="Center"
+                            WidthRequest="18" />
+                        <Ellipse
+                            x:Name="Check"
+                            BackgroundColor="Transparent"
+                            Fill="{StaticResource MainColour}"
+                            HeightRequest="10"
+                            HorizontalOptions="Center"
+                            Stroke="{StaticResource MainColour}"
+                            StrokeThickness="0"
+                            VerticalOptions="Center"
+                            WidthRequest="10" />
+                    </Grid>
+                    <!--  This enables us to put in dynamic content  -->
+                </Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CheckedStates">
+                            <VisualState x:Name="Checked">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="{StaticResource MainColour}" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource TertiaryColour}" />
+                                    <Setter TargetName="Check" Property="Opacity" Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Unchecked">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="Transparent" />
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                    <Setter TargetName="Check" Property="Opacity" Value="0" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </Frame>
+        </ControlTemplate>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                Margin="0,5,5,5"
+                HorizontalOptions="Fill"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <Label
+                    HorizontalOptions="Start"
+                    IsVisible="True"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.ArrowLeft}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Style="{StaticResource TitleLabel}" Text="{extensions:Translate Settings_Label}" />
+                <Label
+                    Margin="0,0,10,0"
+                    HorizontalOptions="End"
+                    Style="{StaticResource LinkLabel}"
+                    Text="{extensions:Translate Save_Button}"
+                    VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SaveSettingsCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <StackLayout Margin="20" VerticalOptions="FillAndExpand">
+                <Label Style="{StaticResource PanelHeader}" Text="{extensions:Translate Language_Label}" />
+                <Grid
+                    ColumnDefinitions="1*,1*"
+                    RadioButtonGroup.GroupName="SelectedLanguage"
+                    RadioButtonGroup.SelectedValue="{Binding SelectedLanguage}">
+                    <RadioButton
+                        Grid.Column="0"
+                        ControlTemplate="{StaticResource FilterRadioTemplate}"
+                        Value="en">
+                        <RadioButton.Content>
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label
+                                    FontSize="Small"
+                                    Text="{extensions:Translate Settings_EnglishLabel}"
+                                    TextColor="Black" />
+                            </StackLayout>
+                        </RadioButton.Content>
+                    </RadioButton>
+                    <RadioButton
+                        Grid.Column="1"
+                        ControlTemplate="{StaticResource FilterRadioTemplate}"
+                        Value="cy">
+                        <RadioButton.Content>
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label
+                                    FontSize="Small"
+                                    Text="{extensions:Translate Settings_WelshLabel}"
+                                    TextColor="Black" />
+                            </StackLayout>
+                        </RadioButton.Content>
+                    </RadioButton>
+                </Grid>
+
+                <Label Style="{StaticResource PanelHeader}" Text="{extensions:Translate Allow_Followers_Label}" />
+                <Grid
+                    ColumnDefinitions="1*,1*"
+                    RadioButtonGroup.GroupName="AllowFollowers"
+                    RadioButtonGroup.SelectedValue="{Binding AllowFollowers}">
+                    <RadioButton
+                        Grid.Column="0"
+                        ControlTemplate="{StaticResource FilterRadioTemplate}"
+                        Value="followers_yes">
+                        <RadioButton.Content>
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label
+                                    FontSize="Small"
+                                    Text="{extensions:Translate Yes_Option}"
+                                    TextColor="Black" />
+                            </StackLayout>
+                        </RadioButton.Content>
+                    </RadioButton>
+                    <RadioButton
+                        Grid.Column="1"
+                        ControlTemplate="{StaticResource FilterRadioTemplate}"
+                        Value="followers_no">
+                        <RadioButton.Content>
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label
+                                    FontSize="Small"
+                                    Text="{extensions:Translate No_Option}"
+                                    TextColor="Black" />
+                            </StackLayout>
+                        </RadioButton.Content>
+                    </RadioButton>
+                </Grid>
+                <Label
+                    IsVisible="False"
+                    Style="{StaticResource PanelHeader}"
+                    Text="{extensions:Translate Units_Label}" />
+                <Grid
+                    ColumnDefinitions="1*,1*"
+                    IsVisible="False"
+                    RadioButtonGroup.GroupName="SelectedUnits"
+                    RadioButtonGroup.SelectedValue="{Binding SelectedUnits}">
+                    <RadioButton
+                        Grid.Column="0"
+                        ControlTemplate="{StaticResource FilterRadioTemplate}"
+                        Value="units_miles">
+                        <RadioButton.Content>
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label
+                                    FontSize="Small"
+                                    Text="{extensions:Translate Miles_Label}"
+                                    TextColor="Black" />
+                            </StackLayout>
+                        </RadioButton.Content>
+                    </RadioButton>
+                    <RadioButton
+                        Grid.Column="1"
+                        ControlTemplate="{StaticResource FilterRadioTemplate}"
+                        Value="units_kilometers">
+                        <RadioButton.Content>
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label
+                                    FontSize="Small"
+                                    Text="{extensions:Translate Kilometers_Label}"
+                                    TextColor="Black" />
+                            </StackLayout>
+                        </RadioButton.Content>
+                    </RadioButton>
+                </Grid>
+                <Label
+                    Margin="1,10,0,0"
+                    Style="{StaticResource LinkLabel}"
+                    Text="{extensions:Translate Privacy_Policy_Label}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToPrivacy}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Style="{StaticResource LinkLabel}" Text="{extensions:Translate Terms_Of_Service_Label}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToTerms}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label
+                    IsVisible="False"
+                    Style="{StaticResource LinkLabel}"
+                    Text="{extensions:Translate Rate_The_App_Label}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToRatings}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Style="{StaticResource LinkLabel}" Text="{extensions:Translate Log_Out_Label}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding LogOut}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <StackLayout Margin="20" VerticalOptions="End">
+                <Label
+                    Margin="0,0,10,0"
+                    HorizontalOptions="Start"
+                    Style="{StaticResource LinkLabel}"
+                    Text="{extensions:Translate DeleteAccount_Title}"
+                    VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DeleteAccountCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</views:PageBase>

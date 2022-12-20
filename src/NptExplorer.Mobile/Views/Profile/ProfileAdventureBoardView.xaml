@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.Profile.ProfileAdventureBoardView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:icons="clr-namespace:NptExplorer.Mobile.Constants;assembly=NptExplorer.Mobile"
+    xmlns:profileadventureboard="clr-namespace:NptExplorer.Mobile.ViewModels.Profile;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    iOsSpecific:Page.PrefersHomeIndicatorAutoHidden="True"
+    iOsSpecific:Page.UseSafeArea="True"
+    x:TypeArguments="profileadventureboard:ProfileAdventureBoardViewModel"
+    ControlTemplate="{StaticResource MainTemplate}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.ForegroundColor="Black"
+    Shell.NavBarHasShadow="False"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True">
+
+    <ContentPage.Resources>
+        <Style x:Key="FriendButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColour}" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="Margin" Value="0,10,0,0" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="CornerRadius">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="Android" Value="30" />
+                        <On Platform="iOS" Value="15" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="BoardButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource TertiaryColour}" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="Margin" Value="0,10,0,0" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="CornerRadius">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="Android" Value="30" />
+                        <On Platform="iOS" Value="15" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ControlTemplate x:Key="AdventureBoardRadioTemplate">
+            <Frame
+                Padding="0"
+                BackgroundColor="White"
+                BorderColor="White"
+                HasShadow="False"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
+                <Frame.CornerRadius>
+                    <OnPlatform x:TypeArguments="x:Single">
+                        <On Platform="iOS" Value="15" />
+                        <On Platform="Android" Value="30" />
+                    </OnPlatform>
+                </Frame.CornerRadius>
+                <Grid Margin="4" ColumnDefinitions="1*, 9*">
+                    <ContentPresenter Grid.Column="1" />
+                    <Grid
+                        Grid.Column="0"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start">
+                        <Ellipse
+                            Fill="White"
+                            HeightRequest="18"
+                            HorizontalOptions="Center"
+                            Stroke="#140D38"
+                            StrokeThickness="1"
+                            VerticalOptions="Center"
+                            WidthRequest="18" />
+                        <Ellipse
+                            x:Name="Check"
+                            BackgroundColor="Transparent"
+                            Fill="{StaticResource MainColour}"
+                            HeightRequest="10"
+                            HorizontalOptions="Center"
+                            Stroke="{StaticResource MainColour}"
+                            StrokeThickness="0"
+                            VerticalOptions="Center"
+                            WidthRequest="10" />
+                    </Grid>
+                    <!--  This enables us to put in dynamic content  -->
+                </Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CheckedStates">
+                            <VisualState x:Name="Checked">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="{StaticResource MainColour}" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource TertiaryColour}" />
+                                    <Setter TargetName="Check" Property="Opacity" Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Unchecked">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="Transparent" />
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                    <Setter TargetName="Check" Property="Opacity" Value="0" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </Frame>
+        </ControlTemplate>
+    </ContentPage.Resources>
+
+    <ContentView>
+        <StackLayout>
+            <StackLayout
+                Margin="20,10"
+                HorizontalOptions="Fill"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <Label
+                    HorizontalOptions="Start"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.ArrowLeft}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label
+                    x:Name="TitleLabel"
+                    HorizontalOptions="StartAndExpand"
+                    Style="{StaticResource TitleLabel}"
+                    Text="{Binding ScreenTitle}" />
+                <Label
+                    HorizontalOptions="End"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.Cog}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToSettings}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout Margin="20,5">
+                <Label
+                    FontSize="Medium"
+                    Style="{StaticResource HeaderLabelStyle}"
+                    Text="{extensions:Translate Profile_AdventureBoardLabel}" />
+                <FlexLayout RadioButtonGroup.GroupName="AdventureBoard" RadioButtonGroup.SelectedValue="{Binding SortByFilter}">
+
+                    <RadioButton
+                        CheckedChanged="CheckRadioButton_Clicked"
+                        ControlTemplate="{StaticResource AdventureBoardRadioTemplate}"
+                        IsChecked="True"
+                        Value="board_all">
+                        <RadioButton.Content>
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label
+                                    FontSize="Small"
+                                    Text="{extensions:Translate Profile_RadioAll}"
+                                    TextColor="Black" />
+                            </StackLayout>
+                        </RadioButton.Content>
+                    </RadioButton>
+
+                    <RadioButton
+                        CheckedChanged="CheckRadioButton_Clicked"
+                        ControlTemplate="{StaticResource AdventureBoardRadioTemplate}"
+                        Value="board_friends">
+                        <RadioButton.Content>
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label
+                                    FontSize="Small"
+                                    Text="{extensions:Translate Profile_RadioFriends}"
+                                    TextColor="Black" />
+                            </StackLayout>
+                        </RadioButton.Content>
+                    </RadioButton>
+
+                </FlexLayout>
+
+                <StackLayout WidthRequest="100">
+                    <ListView
+                        HasUnevenRows="True"
+                        ItemsSource="{Binding BoardList}"
+                        SelectionMode="None"
+                        SeparatorVisibility="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid
+                                        ColumnDefinitions="1*,3*,4*,3*"
+                                        ColumnSpacing="0"
+                                        RowSpacing="0">
+                                        <StackLayout Grid.Column="0">
+                                            <Label
+                                                Margin="5,20,0,0"
+                                                HorizontalTextAlignment="Start"
+                                                Text="{Binding Position}"
+                                                WidthRequest="100" />
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1">
+                                            <Label
+                                                Margin="0,20,0,0"
+                                                HorizontalTextAlignment="Start"
+                                                Text="{Binding Name}"
+                                                WidthRequest="100" />
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="2">
+                                            <Label
+                                                Margin="0,20,0,0"
+                                                HorizontalTextAlignment="Start"
+                                                Text="{Binding ExplorerLevel}"
+                                                WidthRequest="100" />
+                                        </StackLayout>
+                                        <StackLayout
+                                            Grid.Column="3"
+                                            HorizontalOptions="End"
+                                            Orientation="Horizontal"
+                                            WidthRequest="100">
+                                            <Label
+                                                Margin="20,20,0,0"
+                                                HorizontalTextAlignment="End"
+                                                Text="{Binding Points, StringFormat='{0} pts'}"
+                                                WidthRequest="100" />
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout VerticalOptions="End">
+                    <Grid ColumnDefinitions="1*,1*" RowDefinitions="Auto,Auto">
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="2,0,2,0"
+                            Padding="10"
+                            extensions:CornerRadiusEffect.CornerRadius="10"
+                            extensions:TouchEffect.AnimationDuration="250"
+                            extensions:TouchEffect.AnimationEasing="{x:Static Easing.CubicInOut}"
+                            extensions:TouchEffect.NormalBackgroundColor="#d13333"
+                            extensions:TouchEffect.PressedOpacity="0.6"
+                            extensions:TouchEffect.PressedScale="0.8">
+                            <FlexLayout
+                                AlignItems="Center"
+                                Direction="Column"
+                                JustifyContent="Center"
+                                WidthRequest="100">
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource
+                                            FontFamily="IconFont"
+                                            Glyph="{x:Static icons:IconConstants.Spa}"
+                                            Size="20"
+                                            Color="White" />
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{extensions:Translate Enum_BadgeWellbeing}" TextColor="White" />
+                            </FlexLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding FilterByWellbeing}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="2,0,2,0"
+                            Padding="10"
+                            extensions:CornerRadiusEffect.CornerRadius="10"
+                            extensions:TouchEffect.AnimationDuration="250"
+                            extensions:TouchEffect.AnimationEasing="{x:Static Easing.CubicInOut}"
+                            extensions:TouchEffect.NormalBackgroundColor="#7fb03d"
+                            extensions:TouchEffect.PressedOpacity="0.6"
+                            extensions:TouchEffect.PressedScale="0.8">
+                            <FlexLayout
+                                AlignItems="Center"
+                                Direction="Column"
+                                JustifyContent="Center"
+                                WidthRequest="100">
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource
+                                            FontFamily="IconFont"
+                                            Glyph="{x:Static icons:IconConstants.Leaf}"
+                                            Size="20"
+                                            Color="White" />
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{extensions:Translate Enum_BadgeNature}" TextColor="White" />
+                            </FlexLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding FilterByNature}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <StackLayout
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="2,0,2,0"
+                            Padding="10"
+                            extensions:CornerRadiusEffect.CornerRadius="10"
+                            extensions:TouchEffect.AnimationDuration="250"
+                            extensions:TouchEffect.AnimationEasing="{x:Static Easing.CubicInOut}"
+                            extensions:TouchEffect.NormalBackgroundColor="#7d561b"
+                            extensions:TouchEffect.PressedOpacity="0.6"
+                            extensions:TouchEffect.PressedScale="0.8">
+                            <FlexLayout
+                                AlignItems="Center"
+                                Direction="Column"
+                                JustifyContent="Center"
+                                WidthRequest="100">
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource
+                                            FontFamily="IconFont"
+                                            Glyph="{x:Static icons:IconConstants.Bank}"
+                                            Size="20"
+                                            Color="White" />
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{extensions:Translate Enum_BadgeHeritage}" TextColor="White" />
+                            </FlexLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding FilterByHeritage}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <StackLayout
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="2,0,2,0"
+                            Padding="10"
+                            extensions:CornerRadiusEffect.CornerRadius="10"
+                            extensions:TouchEffect.AnimationDuration="250"
+                            extensions:TouchEffect.AnimationEasing="{x:Static Easing.CubicInOut}"
+                            extensions:TouchEffect.NormalBackgroundColor="#1cadc0"
+                            extensions:TouchEffect.PressedOpacity="0.6"
+                            extensions:TouchEffect.PressedScale="0.8">
+                            <FlexLayout
+                                AlignItems="Center"
+                                Direction="Column"
+                                JustifyContent="Center"
+                                WidthRequest="100">
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource
+                                            FontFamily="IconFont"
+                                            Glyph="{x:Static icons:IconConstants.Road}"
+                                            Size="20"
+                                            Color="White" />
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{extensions:Translate Enum_BadgeTrail}" TextColor="White" />
+                            </FlexLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding FilterByTrail}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Grid>
+                    <Button
+                        Command="{Binding GoToFriends}"
+                        Style="{StaticResource FriendButton}"
+                        Text="{extensions:Translate Profile_ConnectWithFriendsLabel}" />
+                    <Button
+                        Command="{Binding LeaveBoard}"
+                        Style="{StaticResource BoardButton}"
+                        Text="{extensions:Translate Profile_LeaveAdventureBoard}" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentView>
+</views:PageBase>

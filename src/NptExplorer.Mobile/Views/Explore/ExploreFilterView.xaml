@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.Explore.ExploreFilterView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:NptExplorer.Mobile.Controls;assembly=NptExplorer.Mobile"
+    xmlns:explorefilterview="clr-namespace:NptExplorer.Mobile.ViewModels.Explore;assembly=NptExplorer.Mobile"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:icons="clr-namespace:NptExplorer.Mobile.Constants;assembly=NptExplorer.Mobile"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views"
+    Title="Filters"
+    iOsSpecific:Page.PrefersHomeIndicatorAutoHidden="True"
+    iOsSpecific:Page.UseSafeArea="True"
+    x:TypeArguments="explorefilterview:ExploreFilterViewModel"
+    ControlTemplate="{StaticResource MainTemplate}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <Style x:Key="LinkLabel" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource PurpleColour}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="0,0,10,0" />
+        </Style>
+        <Style x:Key="PanelHeader" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+        </Style>
+        <Style x:Key="ChipStyleSelected" TargetType="controls:Chip">
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColour}" />
+            <Setter Property="BorderColor" Value="{StaticResource MainColour}" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="CornerRadius" Value="5" />
+        </Style>
+        <Style x:Key="ChipStyleUnselected" TargetType="controls:Chip">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="BorderColor" Value="{StaticResource LightGreyColour}" />
+            <Setter Property="TextColor" Value="{StaticResource LightGreyColour}" />
+            <Setter Property="CornerRadius" Value="5" />
+        </Style>
+        <ControlTemplate x:Key="FilterRadioTemplate">
+            <Frame
+                Padding="0"
+                BackgroundColor="White"
+                BorderColor="White"
+                HasShadow="False"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
+                <Frame.CornerRadius>
+                    <OnPlatform x:TypeArguments="x:Single">
+                        <On Platform="iOS" Value="15" />
+                        <On Platform="Android" Value="30" />
+                    </OnPlatform>
+                </Frame.CornerRadius>
+                <Grid Margin="4" ColumnDefinitions="1*, 9*">
+                    <ContentPresenter Grid.Column="1" />
+                    <Grid
+                        Grid.Column="0"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start">
+                        <Ellipse
+                            Fill="White"
+                            HeightRequest="18"
+                            HorizontalOptions="Center"
+                            Stroke="#140D38"
+                            StrokeThickness="1"
+                            VerticalOptions="Center"
+                            WidthRequest="18" />
+                        <Ellipse
+                            x:Name="Check"
+                            BackgroundColor="Transparent"
+                            Fill="{StaticResource MainColour}"
+                            HeightRequest="10"
+                            HorizontalOptions="Center"
+                            Stroke="{StaticResource MainColour}"
+                            StrokeThickness="0"
+                            VerticalOptions="Center"
+                            WidthRequest="10" />
+                    </Grid>
+                    <!--  This enables us to put in dynamic content  -->
+                </Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CheckedStates">
+                            <VisualState x:Name="Checked">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="{StaticResource MainColour}" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource TertiaryColour}" />
+                                    <Setter TargetName="Check" Property="Opacity" Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Unchecked">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="Transparent" />
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                    <Setter TargetName="Check" Property="Opacity" Value="0" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </Frame>
+        </ControlTemplate>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                Margin="0,5,5,5"
+                HorizontalOptions="Fill"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <Label
+                    HorizontalOptions="Start"
+                    IsVisible="True"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.ArrowLeft}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Style="{StaticResource TitleLabel}" Text="{extensions:Translate Global_FiltersLabel}" />
+                <Label
+                    Style="{StaticResource LinkLabel}"
+                    Text="{extensions:Translate Filter_ClearLabel}"
+                    VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ClearFilters}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label
+                    Style="{StaticResource LinkLabel}"
+                    Text="{extensions:Translate Filter_SaveLabel}"
+                    VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SaveFilters}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <ScrollView>
+                <StackLayout Margin="10,0">
+                    <StackLayout x:Name="SortPanel" IsVisible="False">
+                        <Label Style="{StaticResource PanelHeader}" Text="{extensions:Translate Sort_Label}" />
+                        <StackLayout RadioButtonGroup.GroupName="{Binding SortByGroup}" RadioButtonGroup.SelectedValue="{Binding SortByFilter}">
+                            <RadioButton ControlTemplate="{StaticResource FilterRadioTemplate}" Value="miles">
+                                <RadioButton.Content>
+                                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                        <Label
+                                            FontSize="Small"
+                                            Text="{extensions:Translate Distance_Miles_RadioButton}"
+                                            TextColor="Black" />
+                                    </StackLayout>
+                                </RadioButton.Content>
+                            </RadioButton>
+                            <RadioButton ControlTemplate="{StaticResource FilterRadioTemplate}" Value="drivingtime">
+                                <RadioButton.Content>
+                                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                        <Label
+                                            FontSize="Small"
+                                            Text="{extensions:Translate Distance_Time_RadioButton}"
+                                            TextColor="Black" />
+                                    </StackLayout>
+                                </RadioButton.Content>
+                            </RadioButton>
+                            <RadioButton ControlTemplate="{StaticResource FilterRadioTemplate}" Value="walkingtime">
+                                <RadioButton.Content>
+                                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                        <Label
+                                            FontSize="Small"
+                                            Text="{extensions:Translate Distance_Walking_RadioButton}"
+                                            TextColor="Black" />
+                                    </StackLayout>
+                                </RadioButton.Content>
+                            </RadioButton>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout IsVisible="False">
+                        <Label Style="{StaticResource PanelHeader}" Text="{extensions:Translate Distance_Label}" />
+                        <Label Text="{extensions:Translate Based_Location_Label}" />
+                        <Slider
+                            Maximum="100"
+                            MaximumTrackColor="Green"
+                            Minimum="0"
+                            MinimumTrackColor="Green"
+                            ThumbColor="Green"
+                            Value="{Binding DistanceSlider}" />
+                        <Label Text="{Binding DistanceSlider}" />
+                    </StackLayout>
+
+                    <StackLayout x:Name="Facilities">
+                        <Label Style="{StaticResource PanelHeader}" Text="{extensions:Translate Facilities_Label}" />
+                        <Label Text="{extensions:Translate Based_Location_Label}" />
+                        <FlexLayout
+                            BindableLayout.ItemsSource="{Binding Facilities}"
+                            JustifyContent="SpaceAround"
+                            Wrap="Wrap">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Margin="0,5">
+                                        <controls:Chip
+                                            Padding="8,5"
+                                            AutoToggle="True"
+                                            ClickedCommand="{Binding ToggleSelected}"
+                                            IsSelected="{Binding Selected}"
+                                            IsToggleable="True"
+                                            Text="{Binding Title}">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualState x:Name="Selected">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="Style" Value="{StaticResource ChipStyleSelected}" />
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                    <VisualState x:Name="Normal">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="Style" Value="{StaticResource ChipStyleUnselected}" />
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                        </controls:Chip>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </FlexLayout>
+                    </StackLayout>
+                    <StackLayout x:Name="ActivitiesPanel">
+                        <Label Style="{StaticResource PanelHeader}" Text="{extensions:Translate Activities_Label}" />
+                        <FlexLayout
+                            BindableLayout.ItemsSource="{Binding Activities}"
+                            JustifyContent="SpaceAround"
+                            Wrap="Wrap">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Margin="0,5">
+                                        <controls:Chip
+                                            Padding="8,5"
+                                            AutoToggle="True"
+                                            ClickedCommand="{Binding ToggleSelected}"
+                                            IsSelected="{Binding Selected}"
+                                            IsToggleable="True"
+                                            Text="{Binding Title}">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualState x:Name="Selected">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="Style" Value="{StaticResource ChipStyleSelected}" />
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                    <VisualState x:Name="Normal">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="Style" Value="{StaticResource ChipStyleUnselected}" />
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                        </controls:Chip>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </FlexLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</views:PageBase>

@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:PageBase
+    x:Class="NptExplorer.Mobile.Views.Adventure.TrailDetailsView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:adventure="clr-namespace:NptExplorer.Mobile.ViewModels.Adventure;assembly=NptExplorer.Mobile"
+    xmlns:controls="clr-namespace:NptExplorer.Mobile.Controls;assembly=NptExplorer.Mobile"
+    xmlns:converters="clr-namespace:NptExplorer.Mobile.Converters;assembly=NptExplorer.Mobile"
+    xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:icons="clr-namespace:NptExplorer.Mobile.Constants;assembly=NptExplorer.Mobile"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:views="clr-namespace:NptExplorer.Mobile.Views;assembly=NptExplorer.Mobile"
+    ios:Page.PrefersHomeIndicatorAutoHidden="True"
+    ios:Page.UseSafeArea="True"
+    x:TypeArguments="adventure:TrailDetailsViewModel"
+    ControlTemplate="{StaticResource MainTemplate}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="NotAnimated"
+    Shell.TabBarIsVisible="True"
+    Visual="Material">
+
+    <ContentPage.Resources>
+        <converters:ImageToUriConverter x:Key="ImageToUriConverter" />
+        <converters:DifficultyConverter x:Key="DifficultyConverter" />
+
+        <Style x:Key="DarkHeaderLabel" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+
+        <Style
+            x:Key="GeneralLabel"
+            ApplyToDerivedTypes="True"
+            TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+        <Style
+            x:Key="EndGeneralLabel"
+            BasedOn="{StaticResource GeneralLabel}"
+            TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="End" />
+            <Setter Property="Margin" Value="0,0,10,0" />
+        </Style>
+
+        <Style x:Key="MapHeader" TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="{StaticResource MainColour}" />
+        </Style>
+        <Style x:Key="MapHeaderLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource WhiteColour}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style x:Key="MapFooterLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource WhiteColour}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+        <Style x:Key="TrailIcon" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource WhiteColour}" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="IconFont" />
+        </Style>
+        <Style x:Key="CheckInButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColour}" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="Margin" Value="0,10,0,0" />
+            <Setter Property="CornerRadius">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="Android" Value="30" />
+                        <On Platform="iOS" Value="15" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="LogButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource TertiaryColour}" />
+            <Setter Property="TextColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="Margin" Value="0,10,0,0" />
+            <Setter Property="CornerRadius">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="Android" Value="30" />
+                        <On Platform="iOS" Value="15" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="NavigateButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource BlackColour}" />
+            <Setter Property="TextColor" Value="{StaticResource WhiteColour}" />
+            <Setter Property="Margin" Value="0,10,0,0" />
+            <Setter Property="CornerRadius">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="Android" Value="30" />
+                        <On Platform="iOS" Value="15" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ResourceDictionary>
+            <extensions:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                Margin="20,10"
+                HorizontalOptions="Fill"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <Label
+                    HorizontalOptions="Start"
+                    IsVisible="True"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.ArrowLeft}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label
+                    x:Name="TitleLabel"
+                    HorizontalOptions="StartAndExpand"
+                    Style="{StaticResource TitleLabel}"
+                    Text="{Binding ScreenTitle}" />
+                <Label
+                    HorizontalOptions="End"
+                    Style="{StaticResource TitleIcon}"
+                    Text="{x:Static icons:IconConstants.Cog}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToSettings}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <Grid
+                Margin="20,5,20,5"
+                RowDefinitions="7*,3*"
+                VerticalOptions="Fill">
+                <StackLayout Grid.Row="0">
+                    <Label Style="{StaticResource DarkHeaderLabel}" Text="{extensions:Translate Adventure_TrailsLabel}" />
+                    <Label
+                        Margin="5,5,0,0"
+                        Style="{StaticResource HeaderLabelStyle}"
+                        Text="{Binding Trail.LocationName}" />
+
+                    <StackLayout HeightRequest="400" VerticalOptions="FillAndExpand">
+                        <Frame
+                            Padding="0"
+                            CornerRadius="15"
+                            VerticalOptions="FillAndExpand">
+                            <Grid
+                                ColumnSpacing="0"
+                                RowDefinitions="1*,5*"
+                                RowSpacing="0">
+                                <StackLayout Grid.Row="0" Style="{StaticResource MapHeader}">
+                                    <Label
+                                        Margin="5,5,0,0"
+                                        HorizontalOptions="StartAndExpand"
+                                        Style="{StaticResource MapHeaderLabel}"
+                                        Text="{Binding Trail.TrailName}" />
+                                </StackLayout>
+                                <Grid
+                                    Grid.Row="1"
+                                    ColumnDefinitions="3*,7*"
+                                    RowDefinitions="1*,1*,1*,1*,1*">
+                                    <forms:CachedImage
+                                        Grid.Row="0"
+                                        Grid.RowSpan="5"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"
+                                        Aspect="AspectFill"
+                                        DownsampleToViewSize="true"
+                                        HorizontalOptions="Fill"
+                                        Source="{Binding Trail.TrailImage, Converter={StaticResource ImageToUriConverter}}"
+                                        WidthRequest="320" />
+                                </Grid>
+                            </Grid>
+                        </Frame>
+                        <controls:BadgeControl
+                            Margin="0,0,10,0"
+                            BadgeType="{Binding Badge}"
+                            Collected="{Binding Trail.Collected}"
+                            HorizontalOptions="End" />
+
+                        <Grid ColumnDefinitions="1*,1*" RowDefinitions="1*,1*,1*,1*">
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Padding="{StaticResource StandardLabelPadding}"
+                                Style="{StaticResource GeneralLabel}"
+                                Text="{extensions:Translate Trails_DifficultyLabel}" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Style="{StaticResource EndGeneralLabel}"
+                                Text="{Binding Trail.Difficulty, Converter={StaticResource DifficultyConverter}}" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Padding="{StaticResource StandardLabelPadding}"
+                                Style="{StaticResource GeneralLabel}"
+                                Text="{extensions:Translate Trails_LengthLabel}" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Style="{StaticResource EndGeneralLabel}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Trail.DistanceMiles}" />
+                                        <Span Text=" " />
+                                        <Span Text="{extensions:Translate Miles_Label}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Padding="{StaticResource StandardLabelPadding}"
+                                Style="{StaticResource GeneralLabel}"
+                                Text="{extensions:Translate Trails_TimeLabel}" />
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Style="{StaticResource EndGeneralLabel}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Trail.TimeHours}" />
+                                        <Span Text=" " />
+                                        <Span Text="{extensions:Translate General_Hours}" />
+                                        <Span Text=" " />
+                                        <Span Text="{Binding Trail.TimeMinutes}" />
+                                        <Span Text=" " />
+                                        <Span Text="{extensions:Translate General_Minutes}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <StackLayout
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2">
+                                <Label
+                                    Padding="{StaticResource StandardLabelPadding}"
+                                    Style="{StaticResource GeneralLabel}"
+                                    Text="{extensions:Translate AdventureTrails_StartPointLabel}" />
+                                <Label
+                                    Padding="{StaticResource StandardLabelPadding}"
+                                    Style="{StaticResource GeneralLabel}"
+                                    Text="{Binding Trail.StartPointDetails}" />
+                            </StackLayout>
+                        </Grid>
+
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" VerticalOptions="End">
+                    <Button
+                        Command="{Binding CheckIn}"
+                        IsVisible="{Binding Trail.Collected, Converter={StaticResource InvertedBoolConverter}}"
+                        Style="{StaticResource CheckInButton}"
+                        Text="{extensions:Translate TrailDetails_CheckInButton}" />
+                    <Button
+                        Command="{Binding LogTrail}"
+                        IsVisible="{Binding Trail.Collected, Converter={StaticResource InvertedBoolConverter}}"
+                        Style="{StaticResource LogButton}"
+                        Text="{extensions:Translate TrailDetails_LogButton}" />
+                    <Button
+                        Command="{Binding GoToNavigateTrails}"
+                        Style="{StaticResource NavigateButton}"
+                        Text="{extensions:Translate TrailDetails_NavigateButton}" />
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</views:PageBase>
